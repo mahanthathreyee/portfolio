@@ -1,0 +1,31 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "My portfolio site",
+  "main": "index.js",
+  "scripts": {
+        "dev": "next",
+      "build": "next build",
+      "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahanthathreyee/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "nextJS",
+    "scss"
+  ],
+  "author": "Maganth Seetharaman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahanthathreyee/portfolio/issues"
+  },
+  "homepage": "https://github.com/mahanthathreyee/portfolio#readme",
+  "dependencies": {
+    "next-scss": "^1.0.3",
+    "nextjs": "0.0.3"
+  }
+}

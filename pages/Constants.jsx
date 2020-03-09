@@ -1,0 +1,33 @@
+import { faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons'
+
+export const ThemeConstants = {
+    Dark: "dark",
+    Light: "light"
+}
+
+export const InitialTheme = ThemeConstants.Dark
+export const InitalThemeButton = ThemeConstants.Light
+
+
+export const HomeOnLoadAnimationConstants = {
+    Load: "load",
+    HideWelcome: "hideWelcome",
+    FlipPivot: "flipPivot",
+    Done: "done"
+}
+
+export const Github = "Github"
+export const Codepen = "Codepen"
+
+export const IconData = {
+    [Github]: {
+        name: 'Github',
+        url: 'https://github.com/mahanthathreyee',
+        icon: faGithub
+    },
+    [Codepen]: {
+        name: 'Codepen',
+        url: 'https://codepen.io/mahanthathreyee',
+        icon: faCodepen
+    }
+}

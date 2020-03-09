@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Styles from '../../../styles/styles.scss'
-
-const AnimationConstants = {
-    Load: "load",
-    HideWelcome: "hideWelcome",
-    FlipPivot: "flipPivot",
-    Done: "done"
-}
+import { HomeOnLoadAnimationConstants as AnimationConstants } from '../../Constants'
 
 const HeadingHandler = (props) => {
     const [headingState, updateHeadingState] = useState(

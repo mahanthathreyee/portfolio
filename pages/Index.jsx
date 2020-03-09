@@ -2,17 +2,17 @@ import React from 'react'
 import Banner from './Banner/Banner'
 import ThemeContext from './ThemeContext'
 import ThemeToggleButton from './ThemeToggleButton'
-
+import { ThemeConstants, InitialTheme } from './Constants'
 
 class Home extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { theme: "dark" }
+        this.state = { theme: InitialTheme }
     }
 
     ToggleTheme = () => {
         this.setState(
-            { theme: this.state.theme == "light" ? "dark" : "light" }
+            { theme: this.state.theme == ThemeConstants.Light ? ThemeConstants.Dark : ThemeConstants.Light }
         )
     }
 

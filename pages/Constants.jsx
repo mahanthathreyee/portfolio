@@ -5,14 +5,15 @@ export const ThemeConstants = {
     Light: "light"
 }
 
-export const InitialTheme = ThemeConstants.Dark
-export const InitalThemeButton = ThemeConstants.Light
+export const InitialTheme = ThemeConstants.Light
+export const InitalThemeButton = ThemeConstants.Dark
 
 
 export const HomeOnLoadAnimationConstants = {
     Load: "load",
     HideWelcome: "hideWelcome",
     FlipPivot: "flipPivot",
+    RemovePivot: "removePivot",
     Done: "done"
 }
 

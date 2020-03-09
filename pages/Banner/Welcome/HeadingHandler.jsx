@@ -14,7 +14,7 @@ const HeadingHandler = (props) => {
         }
     )
     const pivot = ['W', 'M']
-    const content = ["elcome", "aganth Seetharaman"]
+    const content = ["elcome", "aganth Seetharaman", "Maganth Seetharaman"]
     
     useEffect(() => {
         console.log(headingState)
@@ -30,12 +30,17 @@ const HeadingHandler = (props) => {
         }
         else if(headingState.animationState == AnimationConstants.FlipPivot) {
             setTimeout(() => {
-                updateHeadingState({animationState: AnimationConstants.Done, pivotFlipState: Styles.Flip, pivotIndex: 0, headingClass: Styles.Name })
+                updateHeadingState({animationState: AnimationConstants.RemovePivot, pivotFlipState: Styles.Flip, pivotIndex: 0, headingClass: Styles.Name })
+            }, 500)
+        }
+        else if(headingState.animationState == AnimationConstants.RemovePivot) {
+            setTimeout(() => {
+                updateHeadingState({animationState: AnimationConstants.Done, pivotIndex: 1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 1 })
             }, 500)
         }
         else {
             setTimeout(() => {
-                updateHeadingState({animationState: AnimationConstants.Done, pivotIndex: 1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 1})
+                updateHeadingState({animationState: AnimationConstants.Done, pivotIndex: -1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 2})
                 props.animationComplete();
             }, 500)
         }

@@ -1,0 +1,29 @@
+.Banner {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'Space Mono', monospace;
+
+    transition: all 0.5s ease;
+
+    .SocialConnect {
+        margin-top: 10px;
+    
+        .Icons {
+            font-size: 30px;
+            margin: 0 10px;
+            
+            opacity: 0.3;
+            @include transition(opacity 0.5s ease);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

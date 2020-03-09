@@ -4,9 +4,9 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-        "dev": "next",
-      "build": "next build",
-      "start": "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,15 @@
   },
   "homepage": "https://github.com/mahanthathreyee/portfolio#readme",
   "dependencies": {
-    "next-scss": "^1.0.3",
-    "nextjs": "0.0.3"
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@zeit/next-sass": "^1.0.1",
+    "express": "^4.17.1",
+    "next": "^9.2.2",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   }
 }

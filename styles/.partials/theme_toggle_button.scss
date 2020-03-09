@@ -1,0 +1,99 @@
+.ThemeToggleButton {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    background: linear-gradient(
+        to right, 
+        map-get($dark_theme, "background") 50%, 
+        map-get($dark_theme, "foreground") 50%);
+    background-size: 200% 100% !important;
+
+    font-family: 'Space Mono', monospace;
+    display: inline-flex;
+
+    @include transition(all 0.5s ease);
+
+    .ThemeToggleIcon {
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        
+        border: 0;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        background: inherit;
+        color: inherit;
+        
+        background-size: 200% 100% !important;
+        background-position: 0% 0% !important;
+        @include transform(rotate(0deg));
+        @include transition(transform 0.5s ease, background-position 0.5s ease);
+    }
+
+    .ThemeToggleText { 
+        height: 50px;
+        margin: 0;
+        
+        overflow: hidden;
+
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: inherit;
+        color: inherit;
+        cursor: pointer;
+
+        position: absolute;
+        right: 25px;
+        z-index: -1;
+
+        max-width: 0;
+        white-space: nowrap;
+        padding-left: 0;
+        padding-right: 0;
+        @include transition(max-width 0.5s ease, padding 0.5s ease, background-position 0.5s ease 0.5s);
+    }
+
+    &.Dark {
+        color: map-get($dark_theme, "foreground");
+    }
+
+    &.Light {
+        color: map-get($light_theme, "foreground");
+        .ThemeToggleIcon {
+            background-position: -100% 0% !important;
+            @include transition(transform 0.5s ease, background-position 0.5s ease 0.5s);
+        }
+
+        .ThemeToggleText {
+            background-position: -100% 0% !important;
+            @include transition(max-width 0.5s ease, padding 0.5s ease, background-position 0.5s ease);
+        }
+    }
+
+    &:hover {
+        .ThemeToggleIcon {
+            @include transform(rotate(-360deg));
+        }
+
+        .ThemeToggleText {
+            max-width: 150px;
+            padding-left: 15px;
+            padding-right: 30px;
+        }
+    }
+}

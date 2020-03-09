@@ -1,0 +1,29 @@
+.HeadingHandler {
+    display: inline-flex;
+
+    font-size: 5em;
+    @include transition(font-size 0.5s ease);
+
+    &.Name {
+        font-size: 2em;
+    }
+
+    .Pivot {
+        &.Flip {
+            @include transform(scaleY(-1));
+            @include transition(transform 0.5s ease)
+        }
+    }
+
+    .Content {
+        overflow: hidden;
+        white-space: nowrap;
+
+        max-width: 0;
+        @include transition(max-width 1s ease);
+
+        &.Visible {
+            max-width: 1000px;
+        }
+    }
+}

@@ -9,10 +9,24 @@
     
     font-family: 'Space Mono', monospace;
 
-    transition: all 0.5s ease;
+    @include transition(all 0.5s ease);
+
+    .Caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        opacity: 0;
+        &.Visible {
+            opacity: 1;
+            @include transition(opacity 0.5s ease 0.5s);
+        }
+    }
 
     .SocialConnect {
         margin-top: 10px;
+        display: flex;
     
         .Icons {
             font-size: 30px;

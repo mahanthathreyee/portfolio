@@ -1,0 +1,84 @@
+.Banner {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'Space Mono', monospace;
+
+    @include transition(all 0.5s ease);
+
+    .Caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        opacity: 0;
+        &.Visible {
+            opacity: 1;
+            @include transition(opacity 0.5s ease 0.5s);
+        }
+    }
+
+    .SocialConnect {
+        margin-top: 10px;
+        display: flex;
+    
+        .Icons {
+            font-size: 30px;
+            margin: 0 10px;
+            
+            opacity: 0.3;
+            @include transition(opacity 0.5s ease);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .DownArray {
+        position: absolute;
+        bottom: 25px;
+
+        display: flex;
+        flex-direction: column;
+        
+        cursor: pointer;
+        
+        opacity: 0;
+        &.Visible {
+            opacity: 1;
+            @include transition(opacity 0.5s ease 0.5s);
+
+            svg {
+                animation-play-state: running;
+            }
+        }
+
+        svg {
+            opacity: 0;
+            margin: -20px;
+            font-size: 25px;
+            animation-play-state: paused;
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}){
+                    @include animation(glow 5s infinite #{-1 * $i}s);
+                }
+            }
+        }
+    }
+}
+
+@include keyframes(glow) {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}

@@ -5,7 +5,7 @@ import { HomeOnLoadAnimationConstants as AnimationConstants } from '../../Consta
 const HeadingHandler = (props) => {
     const [headingState, updateHeadingState] = useState(
         { 
-            animationState: AnimationConstants.Done, 
+            animationState: AnimationConstants.Load, 
             headingClass: null, 
             contentClass: Styles.Visible,
             pivotFlipState: null,

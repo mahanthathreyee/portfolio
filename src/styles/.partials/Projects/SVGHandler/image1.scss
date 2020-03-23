@@ -1,71 +1,148 @@
 .Image1 {
     
-    &.Start > svg {
-        animation-fill-mode: forwards;
-    }
+    &.Start {
+        opacity: 1;
+        svg {
+            animation-fill-mode: forwards;
 
-    &.End > svg {
-        animation-fill-mode: backwards;
-    }
-    
-    .Ground {
-        opacity: 0;
-        @include animation(Fade 0.5s running);
-        animation-fill-mode: inherit;
-    }
+            .CodeBracketLeft { fill: url(#CodeBracketLeftForwards); }
+            .CodeBracketRight { fill: url(#CodeBracketRightForwards); }
+            .BackgroundBlob { fill: url(#WhiteGradientForwards); }
+            .CodeLines { fill: url(#CodeGradientForwards); }
+            .Tree {
+                path { fill: url(#WhiteGradientForwards); }
+                polygon {  fill: url(#BranchGradientForwards); }
+            }
 
-    .CodeWindow {
-        transform: translateY(-50px);
-        opacity: 0;
-        @include animation(FadeDrop 0.5s running 1.5s);
-        animation-fill-mode: inherit;
-    }
-
-    .CodeLines {
-        fill: url(#CodeGradient);
-    }
-
-    .WindowTitleBorder {
-        opacity: 0;
-        @include animation(Fade 0.5s running 2s);
-        animation-fill-mode: inherit;
-    }
-
-    .WindowsControlIcon {
-        animation-fill-mode: inherit;
-
-        g {
-            opacity: 0;
-            @for $i from 1 through 3 {
-                &:nth-child(#{ $i }) {
-                    @include animation(Fade 0.5s running #{2 + (0.25  * $i)}s);
-                    animation-fill-mode: inherit;
+            .WindowsControlIcon {
+                animation-fill-mode: inherit;
+        
+                g {
+                    opacity: 0;
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{ $i }) {
+                            @include animation(Fade 0.5s running #{2 + (0.25  * $i)}s);
+                            animation-fill-mode: inherit;
+                        }
+                    }
                 }
+            }
+
+            .CodeWindow {
+                transform: translateY(-50px);
+                opacity: 0;
+                @include animation(FadeDrop 0.5s running 1.5s);
+                animation-fill-mode: inherit;
+            }
+
+            .WindowTitleBorder {
+                opacity: 0;
+                @include animation(Fade 0.5s running 2s);
+                animation-fill-mode: inherit;
+            }
+
+            .CodeBracketLeft {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                @include animation(StrokeAnimation 3s running 3s);
+                animation-fill-mode: inherit;
+            }
+        
+            .CodeBracketRight {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                @include animation(StrokeAnimation 3s running 3s);
+                animation-fill-mode: inherit;
+            }
+
+            .Human {
+                transform: translateX(-50px);
+                opacity: 0;
+                @include animation(FadeMove 0.5s running 4.5s);
+                animation-fill-mode: inherit;
+            }
+
+            .Ground {
+                opacity: 0;
+                @include animation(Fade 0.5s running);
+                animation-fill-mode: inherit;
             }
         }
     }
 
-    .CodeBracketLeft {
-        fill: url(#CodeBracketLeft);
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        @include animation(StrokeAnimation 4s running 3s);
-        animation-fill-mode: inherit;
-    }
+    &.End {
+        svg {
+            animation-fill-mode: forwards;
+            animation-direction: reverse;
 
-    .CodeBracketRight {
-        fill: url(#CodeBracketRight);
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        @include animation(StrokeAnimation 4s running 3s);
-        animation-fill-mode: inherit;
-    }
-    
-    .Human {
-        transform: translateX(-50px);
-        opacity: 0;
-        @include animation(FadeMove 0.5s running 4.5s);
-        animation-fill-mode: inherit;
+            .CodeBracketLeft { fill: url(#CodeBracketLeftBackwards); }
+            .CodeBracketRight { fill: url(#CodeBracketRightBackwards); }
+            .BackgroundBlob { fill: url(#WhiteGradientBackwards); }
+            .CodeLines { fill: url(#CodeGradientBackwards); }
+            .Tree {
+                path { fill: url(#WhiteGradientBackwards); }
+                polygon {  fill: url(#BranchGradientBackwards); }
+            }
+
+            .WindowsControlIcon {
+                animation-fill-mode: inherit;
+        
+                g {
+                    opacity: 1;
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{ 4 - $i }) {
+                            @include animation(Fade 0.5s running #{6 + (0.25  * $i)}s);
+                            animation-fill-mode: inherit;
+                            animation-direction: reverse;
+                        }
+                    }
+                }
+            }
+
+            .CodeWindow {
+                @include animation(FadeDrop 0.5s running 7s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .WindowTitleBorder {
+                opacity: 1;
+                @include animation(Fade 0.5s running 6.5s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .CodeBracketLeft {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 999;
+                @include animation(StrokeAnimation 3s running 4s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+        
+            .CodeBracketRight {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 999;
+                @include animation(StrokeAnimation 3s running 4s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .Human {
+                transform: translateX(0px);
+                opacity: 1;
+                @include animation(FadeMove 0.5s running 6s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .Ground {
+                opacity: 1;
+                @include animation(Fade 0.5s running 7.5s);
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+        }
     }
 }
 

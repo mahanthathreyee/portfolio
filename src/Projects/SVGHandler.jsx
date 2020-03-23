@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Styles from '../styles/styles.scss'
 
 const Image1 = () => {
+    const [animationState, updateAnimationState] = useState(Styles.Start)
+
+    useEffect(() => {
+        setTimeout(() => {
+            updateAnimationState(Styles.End)
+        }, 6000)
+    }, [animationState])
+
     return(
-        <div className={ `${ Styles.Image1 } ${ Styles.Start }` }>
+        <div className={ `${ Styles.Image1 } ${ animationState }` }>
             <svg id="a594ac37-6d44-4297-8862-1cbd9c01c0b7" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1126.19355" height="855" viewBox="0 0 1126.19355 855">
                 <title>code review</title>
                 <defs>
-                    <linearGradient id="WhiteGradient" x1="50%" y1="100%" x2="50%" y2="0%">
+                    <linearGradient id="WhiteGradientForwards" x1="50%" y1="100%" x2="50%" y2="0%">
                         <stop offset="0" stop-color="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="0.5s" />
                         </stop>
@@ -15,7 +23,7 @@ const Image1 = () => {
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="0.5s"  />
                         </stop>
                     </linearGradient>
-                    <linearGradient id="BranchGradient" x1="50%" y1="100%" x2="50%" y2="0%">
+                    <linearGradient id="BranchGradientForwards" x1="50%" y1="100%" x2="50%" y2="0%">
                         <stop offset="0" stop-color="#3f3d56">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="1s" />
                         </stop>
@@ -23,7 +31,7 @@ const Image1 = () => {
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="1s"  />
                         </stop>
                     </linearGradient>
-                    <linearGradient id="CodeGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <linearGradient id="CodeGradientForwards" x1="0%" y1="50%" x2="100%" y2="50%">
                         <stop offset="0" stop-color="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s" />
                         </stop>
@@ -31,7 +39,7 @@ const Image1 = () => {
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s"  />
                         </stop>
                     </linearGradient>
-                    <linearGradient id="CodeBracketLeft" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <linearGradient id="CodeBracketLeftForwards" x1="0%" y1="50%" x2="100%" y2="50%">
                         <stop offset="0" stop-color="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s" />
                         </stop>
@@ -39,12 +47,54 @@ const Image1 = () => {
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s"  />
                         </stop>
                     </linearGradient>
-                    <linearGradient id="CodeBracketRight" x1="100%" y1="50%" x2="0%" y2="50%">
+                    <linearGradient id="CodeBracketRightForwards" x1="100%" y1="50%" x2="0%" y2="50%">
                         <stop offset="0" stop-color="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s" />
                         </stop>
                         <stop offset="0" stop-color="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s"  />
+                        </stop>
+                    </linearGradient>
+
+                    {/* BACKWARDS */}
+                    <linearGradient id="WhiteGradientBackwards" x1="50%" y1="0%" x2="50%" y2="100%">
+                        <stop offset="0" stop-color="transparent">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s" />
+                        </stop>
+                        <stop offset="0" stop-color="#f2f2f2">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s"  />
+                        </stop>
+                    </linearGradient>
+                    <linearGradient id="BranchGradientBackwards" x1="50%" y1="0%" x2="50%" y2="100%">
+                        <stop offset="0" stop-color="transparent">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6.5s" />
+                        </stop>
+                        <stop offset="0" stop-color="#3f3d56">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6.5s"  />
+                        </stop>
+                    </linearGradient>
+                    <linearGradient id="CodeGradientBackwards" x1="100%" y1="50%" x2="0%" y2="50%">
+                        <stop offset="0" stop-color="transparent">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
+                        </stop>
+                        <stop offset="0" stop-color="#f2f2f2">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
+                        </stop>
+                    </linearGradient>
+                    <linearGradient id="CodeBracketLeftBackwards" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0" stop-color="transparent">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
+                        </stop>
+                        <stop offset="0" stop-color="#6c63ff">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
+                        </stop>
+                    </linearGradient>
+                    <linearGradient id="CodeBracketRightBackwards" x1="100%" y1="50%" x2="0%" y2="50%">
+                        <stop offset="0" stop-color="transparent">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
+                        </stop>
+                        <stop offset="0" stop-color="#6c63ff">
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
                         </stop>
                     </linearGradient>
                 </defs>
@@ -52,7 +102,7 @@ const Image1 = () => {
 
 
 
-                <path fill="url(#WhiteGradient)" className={ Styles.BackgroundBlob } d="M581.7675,778.43794C339.36866,759.99137,50.29677,572.17166,65.01385,378.78054S359.70017,5.35846,602.099,23.805,984.03089,403.667,969.31381,597.05809,824.16633,796.88451,581.7675,778.43794Z" transform="translate(-36.90323 -22.5)" />
+                <path className={ Styles.BackgroundBlob } d="M581.7675,778.43794C339.36866,759.99137,50.29677,572.17166,65.01385,378.78054S359.70017,5.35846,602.099,23.805,984.03089,403.667,969.31381,597.05809,824.16633,796.88451,581.7675,778.43794Z" transform="translate(-36.90323 -22.5)" />
                 <g className={ Styles.Ground }>
                     <ellipse cx="565.19355" cy="756" rx="506" ry="31" fill="#3f3d56" />
                     <ellipse cx="565.19355" cy="755.5" rx="431" ry="20.5" opacity="0.1" />
@@ -94,8 +144,8 @@ const Image1 = () => {
                 </g>
                 <rect className={ Styles.WindowTitleBorder } x="196.19355" y="192" width="752" height="3" opacity="0.1" />
                 <g className={ Styles.Tree }>
-                    <path fill="url(#WhiteGradient)" d="M1163.09677,629.95357c0,63.77108-37.91089,86.03756-84.67635,86.03756s-84.67635-22.26648-84.67635-86.03756,84.67635-144.898,84.67635-144.898S1163.09677,566.18249,1163.09677,629.95357Z" transform="translate(-36.90323 -22.5)" />
-                    <polygon fill="url(#BranchGradient)" points="1038.433 683.736 1039.3 630.365 1075.391 564.338 1039.436 621.993 1039.826 597.995 1064.699 550.226 1039.929 591.645 1039.929 591.645 1040.63 548.484 1067.265 510.453 1040.74 541.697 1041.178 462.556 1038.425 567.325 1038.651 563.003 1011.571 521.552 1038.217 571.3 1035.694 619.503 1035.619 618.223 1004.4 574.602 1035.524 622.743 1035.209 628.771 1035.152 628.862 1035.178 629.357 1028.776 751.653 1037.329 751.653 1038.355 688.485 1069.404 640.461 1038.433 683.736" />
+                    <path d="M1163.09677,629.95357c0,63.77108-37.91089,86.03756-84.67635,86.03756s-84.67635-22.26648-84.67635-86.03756,84.67635-144.898,84.67635-144.898S1163.09677,566.18249,1163.09677,629.95357Z" transform="translate(-36.90323 -22.5)" />
+                    <polygon points="1038.433 683.736 1039.3 630.365 1075.391 564.338 1039.436 621.993 1039.826 597.995 1064.699 550.226 1039.929 591.645 1039.929 591.645 1040.63 548.484 1067.265 510.453 1040.74 541.697 1041.178 462.556 1038.425 567.325 1038.651 563.003 1011.571 521.552 1038.217 571.3 1035.694 619.503 1035.619 618.223 1004.4 574.602 1035.524 622.743 1035.209 628.771 1035.152 628.862 1035.178 629.357 1028.776 751.653 1037.329 751.653 1038.355 688.485 1069.404 640.461 1038.433 683.736" />
                 </g>
                 <g className={ Styles.Human }>
                     <path d="M159.52481,773.59144a43.12568,43.12568,0,0,1-8.17805,3.50253c-5.07883,1.38739-10.50718.8784-15.63716,2.06274-2.10034.4849-4.38629,1.49916-5.05424,3.54866-.48995,1.50331.04306,3.12668.55347,4.62317,5.66852,16.61991,9.08515,34.26625,18.12518,49.32052a74.64075,74.64075,0,0,0,13.99269,16.98766c2.05512,1.85228,4.38405,3.6643,7.13541,3.95491a7.24769,7.24769,0,0,0,7.37055-10.182c-.81056-1.8011-2.31727-3.19619-3.289-4.91569a18.757,18.757,0,0,1-1.81948-6.99071c-.89312-7.10831-1.7535-14.53764.70942-21.26517,1.6519-4.5122,4.68207-8.35894,7.20641-12.4475s4.62171-8.7719,4.06-13.544c-.38332-3.25659-1.97189-6.23685-3.65-9.054-1.68146-2.8227-5.00472-10.40837-8.38287-11.35035C169.16047,766.86441,162.583,772.02411,159.52481,773.59144Z" transform="translate(-36.90323 -22.5)" fill="#2f2e41" />

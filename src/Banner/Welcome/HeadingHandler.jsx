@@ -5,7 +5,7 @@ import { HomeOnLoadAnimationConstants as AnimationConstants } from '../../Consta
 const HeadingHandler = (props) => {
     const [headingState, updateHeadingState] = useState(
         { 
-            animationState: AnimationConstants.Load, 
+            animationState: AnimationConstants.Done, 
             headingClass: null, 
             contentClass: Styles.Visible,
             pivotFlipState: null,
@@ -17,7 +17,6 @@ const HeadingHandler = (props) => {
     const content = ["elcome", "aganth Seetharaman", "Maganth Seetharaman"]
     
     useEffect(() => {
-        console.log(headingState)
         if(headingState.animationState == AnimationConstants.Load) {
             setTimeout(() => {
                 updateHeadingState({animationState: AnimationConstants.HideWelcome, contentClass: Styles.Invisible, pivotIndex: 0, contentIndex: 0})
@@ -47,7 +46,7 @@ const HeadingHandler = (props) => {
     }, [headingState.animationState])
 
     return (
-        <div className={`${ Styles.HeadingHandler } ${ headingState.headingClass }`}>
+        <div className={ `${ Styles.HeadingHandler } ${ headingState.headingClass }` }>
             <h1 className={ `${ Styles.Pivot } ${ headingState.pivotFlipState }` }>{ pivot[headingState.pivotIndex] }</h1>
             <h1 className={ `${ Styles.Content } ${ headingState.contentClass }` }>{ content[headingState.contentIndex] }</h1>
         </div>

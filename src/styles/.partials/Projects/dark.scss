@@ -1,0 +1,10 @@
+.Projects {
+    &.Dark {
+        background: map-get($dark_theme, "background");
+        color: map-get($dark_theme, "foreground");
+
+        a {
+            color: map-get($dark_theme, "foreground");
+        }
+    }
+}

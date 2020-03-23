@@ -1,0 +1,102 @@
+.Image1 {
+    
+    &.Start > svg {
+        animation-fill-mode: forwards;
+    }
+
+    &.End > svg {
+        animation-fill-mode: backwards;
+    }
+    
+    .Ground {
+        opacity: 0;
+        @include animation(Fade 0.5s running);
+        animation-fill-mode: inherit;
+    }
+
+    .CodeWindow {
+        transform: translateY(-50px);
+        opacity: 0;
+        @include animation(FadeDrop 0.5s running 1.5s);
+        animation-fill-mode: inherit;
+    }
+
+    .CodeLines {
+        fill: url(#CodeGradient);
+    }
+
+    .WindowTitleBorder {
+        opacity: 0;
+        @include animation(Fade 0.5s running 2s);
+        animation-fill-mode: inherit;
+    }
+
+    .WindowsControlIcon {
+        animation-fill-mode: inherit;
+
+        g {
+            opacity: 0;
+            @for $i from 1 through 3 {
+                &:nth-child(#{ $i }) {
+                    @include animation(Fade 0.5s running #{2 + (0.25  * $i)}s);
+                    animation-fill-mode: inherit;
+                }
+            }
+        }
+    }
+
+    .CodeBracketLeft {
+        fill: url(#CodeBracketLeft);
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        @include animation(StrokeAnimation 4s running 3s);
+        animation-fill-mode: inherit;
+    }
+
+    .CodeBracketRight {
+        fill: url(#CodeBracketRight);
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        @include animation(StrokeAnimation 4s running 3s);
+        animation-fill-mode: inherit;
+    }
+    
+    .Human {
+        transform: translateX(-50px);
+        opacity: 0;
+        @include animation(FadeMove 0.5s running 4.5s);
+        animation-fill-mode: inherit;
+    }
+}
+
+@include keyframes(Fade) {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@include keyframes(FadeDrop) {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@include keyframes(StrokeAnimation) {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+}
+
+@include keyframes(FadeMove) {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

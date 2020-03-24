@@ -22,25 +22,25 @@ const Image2 = () => {
                 <title>developer activity</title>
                 <defs>
                     <linearGradient id="CloudFillForwards" x1="50%" y1="100%" x2="50%" y2="0%">
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s"  />
                         </stop>
                     </linearGradient>
 
                     {/* BACKWARDS */}
                     <linearGradient id="CloudFillBackwards" x1="50%" y1="100%" x2="50%" y2="0%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
                         </stop>
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
                         </stop>
                     </linearGradient>
                 </defs>
-                <path className={ Styles.Cloud } stroke="#6c63ff" stroke-width="25" d="M1172,537.57a181.92,181.92,0,0,1-6.85,49.6,180.06,180.06,0,0,1-19.27,44.28c0,50.1-33.82,93.4-82.91,114a167.3,167.3,0,0,1-64.73,12.8H245.17c-40.25,0-77.55-10.86-108.14-29.36A185.76,185.76,0,0,1,112.2,711c-34-29.22-55.08-69.6-55.08-114.2A180.5,180.5,0,0,1,28,498.08c0-73.36,43.39-136.44,105.55-164.29a174.52,174.52,0,0,1,25.51-9.12q4.63-1.26,9.36-2.26a175.39,175.39,0,0,1,25.51-3.5q4.65-.29,9.35-.33H205c3.46,0,6.89.12,10.3.32l1.12-1.9q2.06-3.44,4.22-6.81,3.9-6.14,8.18-12.1,4.48-6.29,9.35-12.38l.83-1q2.76-3.44,5.64-6.8,9-10.49,19-20.35c72.11-70.68,185.08-116.18,312.08-116.18,98.82,0,189.15,27.55,258.34,73.07A174.18,174.18,0,0,1,920,191.86c97.74,0,177,80.37,177,179.51a184.9,184.9,0,0,1-1,18.78A180,180,0,0,1,1172,537.57Z" transform="translate(-28 -141.34)" opacity="0.1" />
+                <path className={ Styles.Cloud } stroke="#6c63ff" strokeWidth="25" d="M1172,537.57a181.92,181.92,0,0,1-6.85,49.6,180.06,180.06,0,0,1-19.27,44.28c0,50.1-33.82,93.4-82.91,114a167.3,167.3,0,0,1-64.73,12.8H245.17c-40.25,0-77.55-10.86-108.14-29.36A185.76,185.76,0,0,1,112.2,711c-34-29.22-55.08-69.6-55.08-114.2A180.5,180.5,0,0,1,28,498.08c0-73.36,43.39-136.44,105.55-164.29a174.52,174.52,0,0,1,25.51-9.12q4.63-1.26,9.36-2.26a175.39,175.39,0,0,1,25.51-3.5q4.65-.29,9.35-.33H205c3.46,0,6.89.12,10.3.32l1.12-1.9q2.06-3.44,4.22-6.81,3.9-6.14,8.18-12.1,4.48-6.29,9.35-12.38l.83-1q2.76-3.44,5.64-6.8,9-10.49,19-20.35c72.11-70.68,185.08-116.18,312.08-116.18,98.82,0,189.15,27.55,258.34,73.07A174.18,174.18,0,0,1,920,191.86c97.74,0,177,80.37,177,179.51a184.9,184.9,0,0,1-1,18.78A180,180,0,0,1,1172,537.57Z" transform="translate(-28 -141.34)" opacity="0.3" />
                 <g className={ `${ Styles.Github } ${ contribAnimationState }` }>
                     <rect x="245.02" y="111.02" width="25.51" height="25.51" fill="#6c63ff" opacity="0.2" />
                     <rect x="279.88" y="111.02" width="25.51" height="25.51" fill="#6c63ff" opacity="0.2" />
@@ -230,8 +230,8 @@ const Image2 = () => {
                     <path d="M837.2,479.31s5.67,16.86-11.06,23.95L824,507l10.48,10.34S847.4,493.77,846,485.4C846,485.4,844,476.9,837.2,479.31Z" transform="translate(-28 -141.34)" fill="#fff" />
                     <circle cx="790.2" cy="388.99" r="25.94" fill="#6c63ff" />
                     <path d="M846.13,489.23l-4.12-6.8-6-.85c1.28-22.39-4.53-29.06-4.53-29.06l-1.35-.13-5.88-.57-11.06-11.48v-3.26c15.54,1.85,24.13,9.23,28.77,17.88C850.16,470.14,846.13,489.23,846.13,489.23Z" transform="translate(-28 -141.34)" fill="#6c63ff" />
-                    <path d="M830.18,448.27v4.12l-5.88-.57-11.06-11.48S830.35,444.17,830.18,448.27Z" transform="translate(-28 -141.34)" stroke="#4c4981" stroke-miterLimit="10" opacity="0.1" />
-                    <path d="M846.13,489.23l-4.12-6.8V455C850.16,470.14,846.13,489.23,846.13,489.23Z" transform="translate(-28 -141.34)" stroke="#4c4981" stroke-miterLimit="10" opacity="0.1" />
+                    <path d="M830.18,448.27v4.12l-5.88-.57-11.06-11.48S830.35,444.17,830.18,448.27Z" transform="translate(-28 -141.34)" stroke="#4c4981" strokeMiterlimit="10" opacity="0.1" />
+                    <path d="M846.13,489.23l-4.12-6.8V455C850.16,470.14,846.13,489.23,846.13,489.23Z" transform="translate(-28 -141.34)" stroke="#4c4981" strokeMiterlimit="10" opacity="0.1" />
                     <ellipse cx="757.11" cy="518.2" rx="14.43" ry="26.32" transform="translate(-185.67 306.64) rotate(-30)" fill="#fff" />
                     <path d="M761,516c7.27,12.59,16.19,21,9.29,25s-27,2-34.27-10.6-.67-30,6.23-34S753.72,503.38,761,516Z" transform="translate(-28 -141.34)" fill="#6c63ff" />
                     <path d="M825.73,425.3c0,40.23-27.53,79-67.76,79a72.85,72.85,0,0,1,0-145.7C798.2,358.64,825.73,385.06,825.73,425.3Z" transform="translate(-28 -141.34)" opacity="0.1" />

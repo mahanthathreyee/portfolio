@@ -19,9 +19,9 @@ const SocialConnect = (props) => {
     return(
         <div className={ Styles.SocialConnect }>
         {icons.map(
-            (iconName) => {
+            (iconName, index) => {
                 return (
-                    <IconWrapper iconName={ iconName } />
+                    <IconWrapper iconName={ iconName } key={ index } />
                 )
             }
         )}

@@ -5,7 +5,7 @@ export const ThemeConstants = {
     Light: "light"
 }
 
-export const InitialTheme = ThemeConstants.Light
+export const InitialTheme = ThemeConstants.Dark
 export const InitalThemeButton = InitialTheme == ThemeConstants.Light ? ThemeConstants.Dark : ThemeConstants.Light
 
 

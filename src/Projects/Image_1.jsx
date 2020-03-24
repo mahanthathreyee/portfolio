@@ -11,7 +11,7 @@ const Image1 = () => {
     }, [animationState])
 
     return(
-        <div className={ `${ Styles.Image1 } ${ animationState }` }>
+        <div className={ `${ Styles.Image } ${ Styles.Image1 } ${ animationState }` }>
             <svg id="a594ac37-6d44-4297-8862-1cbd9c01c0b7" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1126.19355" height="855" viewBox="0 0 1126.19355 855">
                 <title>code review</title>
                 <defs>

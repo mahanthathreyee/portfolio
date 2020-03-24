@@ -44,14 +44,14 @@
             .CodeBracketLeft {
                 stroke-dasharray: 1000;
                 stroke-dashoffset: 1000;
-                @include animation(StrokeAnimation 3s running 3s);
+                @include animation(StrokeAnimationBrackets 3s running 3s);
                 animation-fill-mode: inherit;
             }
         
             .CodeBracketRight {
                 stroke-dasharray: 1000;
                 stroke-dashoffset: 1000;
-                @include animation(StrokeAnimation 3s running 3s);
+                @include animation(StrokeAnimationBrackets 3s running 3s);
                 animation-fill-mode: inherit;
             }
 
@@ -115,7 +115,7 @@
             .CodeBracketLeft {
                 stroke-dasharray: 1000;
                 stroke-dashoffset: 999;
-                @include animation(StrokeAnimation 3s running 4s);
+                @include animation(StrokeAnimationBrackets 3s running 4s);
                 animation-fill-mode: inherit;
                 animation-direction: inherit;
             }
@@ -123,7 +123,7 @@
             .CodeBracketRight {
                 stroke-dasharray: 1000;
                 stroke-dashoffset: 999;
-                @include animation(StrokeAnimation 3s running 4s);
+                @include animation(StrokeAnimationBrackets 3s running 4s);
                 animation-fill-mode: inherit;
                 animation-direction: inherit;
             }
@@ -151,6 +151,12 @@
     to { opacity: 1; }
 }
 
+
+@include keyframes(StrokeAnimationBrackets) {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+}
+
 @include keyframes(FadeDrop) {
     from {
         transform: translateY(-50px);
@@ -160,11 +166,6 @@
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-@include keyframes(StrokeAnimation) {
-    from { stroke-dashoffset: 1000; }
-    to { stroke-dashoffset: 0; }
 }
 
 @include keyframes(FadeMove) {

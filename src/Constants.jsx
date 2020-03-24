@@ -32,3 +32,6 @@ export const IconData = {
         icon: faCodepen
     }
 }
+
+export const Image1AnimationTime = 8500
+export const Image2AnimationTime = 8500

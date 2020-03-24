@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Styles from '../styles/styles.scss'
+import Styles from '../../styles/styles.scss'
 
 const Image2 = () => {
 
@@ -7,12 +7,13 @@ const Image2 = () => {
     const [contribAnimationState, updateContribState] = useState(Styles.NoContrib)
 
     useEffect(() => {
+        if(animationState == Styles.End) return
         setTimeout(() => {
             updateContribState(Styles.ViewContrib)
-        }, 3000)
+        }, 2000)
         setTimeout(() => {
             updateAnimationState(Styles.End)
-        }, 6000)
+        }, 7000)
 
     }, [animationState, contribAnimationState])
 
@@ -23,20 +24,20 @@ const Image2 = () => {
                 <defs>
                     <linearGradient id="CloudFillForwards" x1="50%" y1="100%" x2="50%" y2="0%">
                         <stop offset="0" stopColor="#6c63ff">
-                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s" />
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="2s" />
                         </stop>
                         <stop offset="0" stopColor="transparent">
-                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s"  />
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="2s"  />
                         </stop>
                     </linearGradient>
 
                     {/* BACKWARDS */}
                     <linearGradient id="CloudFillBackwards" x1="50%" y1="100%" x2="50%" y2="0%">
                         <stop offset="0" stopColor="transparent">
-                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s" />
                         </stop>
                         <stop offset="0" stopColor="#6c63ff">
-                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
+                            <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s"  />
                         </stop>
                     </linearGradient>
                 </defs>

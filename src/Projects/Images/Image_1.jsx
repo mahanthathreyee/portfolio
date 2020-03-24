@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import Styles from '../styles/styles.scss'
+import Styles from '../../styles/styles.scss'
 
 const Image1 = () => {
     const [animationState, updateAnimationState] = useState(Styles.Start)
 
     useEffect(() => {
+        if(animationState == Styles.End) return
         setTimeout(() => {
             updateAnimationState(Styles.End)
         }, 6000)
@@ -16,84 +17,84 @@ const Image1 = () => {
                 <title>code review</title>
                 <defs>
                     <linearGradient id="WhiteGradientForwards" x1="50%" y1="100%" x2="50%" y2="0%">
-                        <stop offset="0" stop-color="#f2f2f2">
+                        <stop offset="0" stopColor="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="0.5s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="0.5s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="BranchGradientForwards" x1="50%" y1="100%" x2="50%" y2="0%">
-                        <stop offset="0" stop-color="#3f3d56">
+                        <stop offset="0" stopColor="#3f3d56">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="1s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="1s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeGradientForwards" x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="0" stop-color="#f2f2f2">
+                        <stop offset="0" stopColor="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="3s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeBracketLeftForwards" x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeBracketRightForwards" x1="100%" y1="50%" x2="0%" y2="50%">
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s" />
                         </stop>
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="4s"  />
                         </stop>
                     </linearGradient>
 
                     {/* BACKWARDS */}
                     <linearGradient id="WhiteGradientBackwards" x1="50%" y1="0%" x2="50%" y2="100%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s" />
                         </stop>
-                        <stop offset="0" stop-color="#f2f2f2">
+                        <stop offset="0" stopColor="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="7s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="BranchGradientBackwards" x1="50%" y1="0%" x2="50%" y2="100%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6.5s" />
                         </stop>
-                        <stop offset="0" stop-color="#3f3d56">
+                        <stop offset="0" stopColor="#3f3d56">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6.5s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeGradientBackwards" x1="100%" y1="50%" x2="0%" y2="50%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
                         </stop>
-                        <stop offset="0" stop-color="#f2f2f2">
+                        <stop offset="0" stopColor="#f2f2f2">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeBracketLeftBackwards" x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
                         </stop>
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
                         </stop>
                     </linearGradient>
                     <linearGradient id="CodeBracketRightBackwards" x1="100%" y1="50%" x2="0%" y2="50%">
-                        <stop offset="0" stop-color="transparent">
+                        <stop offset="0" stopColor="transparent">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s" />
                         </stop>
-                        <stop offset="0" stop-color="#6c63ff">
+                        <stop offset="0" stopColor="#6c63ff">
                             <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" begin="6s"  />
                         </stop>
                     </linearGradient>
@@ -135,8 +136,8 @@ const Image1 = () => {
                     <path d="M803.84535,729.37371H512.0602a2.25143,2.25143,0,1,1,0-4.50285H803.84535a2.25142,2.25142,0,0,1,0,4.50285Z" transform="translate(-36.90323 -22.5)" />
                     <path d="M467.9322,729.37371H414.79849a2.25143,2.25143,0,1,1,0-4.50285H467.9322a2.25143,2.25143,0,1,1,0,4.50285Z" transform="translate(-36.90323 -22.5)" />
                 </g>
-                <polygon className={ Styles.CodeBracketLeft } stroke="#6c63ff" stroke-width="5" points="519.06 401.13 447.014 472.275 519.06 543.42 535.27 527.21 480.786 472.725 535.72 417.79 519.06 401.13" />
-                <polygon className={ Styles.CodeBracketRight } stroke="#6c63ff" stroke-width="5" points="625.327 401.13 697.373 472.275 625.327 543.42 609.117 527.21 663.602 472.725 608.667 417.79 625.327 401.13" />
+                <polygon className={ Styles.CodeBracketLeft } stroke="#6c63ff" strokeWidth="5" points="519.06 401.13 447.014 472.275 519.06 543.42 535.27 527.21 480.786 472.725 535.72 417.79 519.06 401.13" />
+                <polygon className={ Styles.CodeBracketRight } stroke="#6c63ff" strokeWidth="5" points="625.327 401.13 697.373 472.275 625.327 543.42 609.117 527.21 663.602 472.725 608.667 417.79 625.327 401.13" />
                 <g className={ Styles.WindowsControlIcon }>
                     <g><circle cx="216.19355" cy="177" r="9" fill="#6c63ff" /></g>
                     <g><circle cx="240.19355" cy="177" r="9" fill="#6c63ff" /></g>

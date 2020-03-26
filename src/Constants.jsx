@@ -8,6 +8,8 @@ export const ThemeConstants = {
 export const InitialTheme = ThemeConstants.Dark
 export const InitalThemeButton = InitialTheme == ThemeConstants.Light ? ThemeConstants.Dark : ThemeConstants.Light
 
+export const BannerAnimationStart = false
+export const BannerAnimationEnd = true
 
 export const HomeOnLoadAnimationConstants = {
     Load: "load",

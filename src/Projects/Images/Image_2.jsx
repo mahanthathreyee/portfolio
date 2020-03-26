@@ -15,7 +15,7 @@ const Image2 = () => {
             updateAnimationState(Styles.End)
         }, 7000)
 
-    }, [animationState, contribAnimationState])
+    }, [animationState])
 
     return(
         <div className={ `${ Styles.Image } ${ Styles.Image2 } ${ animationState }` }>

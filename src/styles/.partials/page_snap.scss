@@ -1,0 +1,9 @@
+.Home {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    
+    .SnapPage {
+        scroll-snap-align: start;
+    }
+}

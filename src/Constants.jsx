@@ -37,3 +37,4 @@ export const IconData = {
 
 export const Image1AnimationTime = 8500
 export const Image2AnimationTime = 8500
+export const Image3AnimationTime = 8500

@@ -1,0 +1,223 @@
+@function endTimeOffset($offset) {
+    $animation_end: 5;  //seconds
+    @return #{ ($animation_end + $offset) }s;
+}
+
+.Image3 {
+
+    &.Start {
+        svg {
+            animation-fill-mode: forwards;
+
+            .Ground { fill: url('#GroundDrawForwards'); }
+            .WindowContent { fill: url('#ContentForwards'); }
+
+            .Laptop {
+                opacity: 0;
+                transform: translateX(50px);
+                @include animation(Image3_FadeLaptopMove 0.5s running);
+                animation-fill-mode: inherit;
+            }
+
+            .Human {
+                opacity: 0;
+                transform: translateX(-50px);
+                @include animation(Image3_FadePersonMove 0.5s running);
+                animation-fill-mode: inherit;
+            }
+
+            .PlantSecond, .PlantFirst {
+                opacity: 0;
+                transform-box: fill-box;
+                transform-origin: bottom;
+            }
+            .PlantSecond { 
+                transform: rotate(60deg); 
+                @include animation(Image3_PetalSecondRotate 1s running 0.5s);
+                animation-fill-mode: inherit;
+            }
+            .PlantFirst { 
+                transform: rotate(30deg); 
+                @include animation(Image3_PetalFirstRotate 0.5s running 0.5s);
+                animation-fill-mode: inherit;
+            }
+
+            .WindowsControlIcon {
+                animation-fill-mode: inherit;
+        
+                g {
+                    opacity: 0;
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{ $i }) {
+                            @include animation(Fade 0.5s running #{2 + (0.25  * $i)}s);
+                            animation-fill-mode: inherit;
+                        }
+                    }
+                }
+            }
+
+            .WindowBox {
+                stroke-dasharray: 2250;
+                stroke-dashoffset: 2250;
+                @include animation(Image3_StrokeAnimationWindowBorder 2s running 1s);
+                animation-fill-mode: inherit;
+            }
+
+            .WindowMargin {
+                stroke-dasharray: 1500;
+                stroke-dashoffset: 1500;
+                @include animation(Image3_StrokeAnimationWindowMargin 1s running 2s);
+                animation-fill-mode: inherit;
+            }
+
+            .WindowContentBorder {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                @include animation(Image3_StrokeAnimationContentBorder 2s running 2s);
+                animation-fill-mode: inherit;
+            }
+        }
+    }
+
+    &.End {
+        svg {
+            animation-fill-mode: forwards;
+            animation-direction: reverse;
+
+            .Ground { fill: url('#GroundDrawBackwards'); }
+            .WindowContent { fill: url('#ContentBackwards'); }
+
+            .Laptop {
+                opacity: 1;
+                transform: translateX(0);
+                @include animation(Image3_FadeLaptopMove 0.5s running #{ endTimeOffset(1.5) });
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .Human {
+                opacity: 1;
+                transform: translateX(0);
+                @include animation(Image3_FadePersonMove 0.5s running #{ endTimeOffset(1.5) });
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .PlantSecond, .PlantFirst {
+                opacity: 1;
+                transform-box: fill-box;
+                transform-origin: bottom;
+            }
+            .PlantSecond { 
+                transform: rotate(0deg); 
+                @include animation(Image3_PetalSecondRotate 1s running #{ endTimeOffset(0.5) } );
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+            .PlantFirst { 
+                transform: rotate(0deg); 
+                @include animation(Image3_PetalFirstRotate 0.5s running #{ endTimeOffset(1) } );
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .WindowsControlIcon {
+                animation-fill-mode: inherit;
+        
+                g {
+                    opacity: 1;
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{ 4 - $i }) {
+                            @include animation(Fade 0.5s running #{endTimeOffset((0.25  * $i))});
+                            animation-fill-mode: inherit;
+                            animation-direction: reverse;
+                        }
+                    }
+                }
+            }
+
+            .WindowBox {
+                stroke-dasharray: 2250;
+                stroke-dashoffset: 0;
+                @include animation(Image3_StrokeAnimationWindowBorder 2s running endTimeOffset(1));
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .WindowMargin {
+                stroke-dasharray: 1500;
+                stroke-dashoffset: 0;
+                @include animation(Image3_StrokeAnimationWindowMargin 1s running endTimeOffset(0));
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+
+            .WindowContentBorder {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 0;
+                @include animation(Image3_StrokeAnimationContentBorder 2s running endTimeOffset(0));
+                animation-fill-mode: inherit;
+                animation-direction: inherit;
+            }
+        }
+    }
+}
+
+@include keyframes(Image3_FadeLaptopMove) {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@include keyframes(Image3_FadePersonMove) {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@include keyframes(Image3_PetalSecondRotate) {
+    from {
+        transform: rotate(60deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@include keyframes(Image3_PetalFirstRotate) {
+    from {
+        transform: rotate(30deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@include keyframes(Image3_StrokeAnimationWindowBorder) {
+    from { stroke-dashoffset: 2250; }
+    to { stroke-dashoffset: 0; }
+}
+
+@include keyframes(Image3_StrokeAnimationWindowMargin) {
+    from { stroke-dashoffset: 1500; }
+    to { stroke-dashoffset: 0; }
+}
+
+@include keyframes(Image3_StrokeAnimationContentBorder) {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+}

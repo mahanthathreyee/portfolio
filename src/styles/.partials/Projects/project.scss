@@ -4,6 +4,13 @@
     
     @include transition(all 0.5s ease);
 
+    .Title {
+        font-family: 'Space Mono', monospace;
+        text-align: center;
+        font-size: 3em;
+        padding-top: 25px;
+    }
+
     .ProjectImageHandler {
         width: inherit;
         height: inherit;

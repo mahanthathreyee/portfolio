@@ -30,6 +30,7 @@ const Projects = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.Projects } ${ themeStyle }` } ref={ divRef } >
+            <h1 class={ Styles.Title }>PROJECTS</h1>
             {topOfPage &&
                 <ProjectImageHandler />
             }

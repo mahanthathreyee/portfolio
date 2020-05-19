@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 import Banner from './Banner/Banner'
 import ThemeContext from './ThemeContext'
 import ThemeToggleButton from './ThemeToggleButton'
-import { ThemeConstants, InitialTheme, BannerAnimationStart } from './Constants'
+import { ThemeConstants, InitialTheme, BannerAnimationStart, BannerAnimationEnd } from './Constants'
 import Projects from './Projects/Projects'
 import Styles from './styles/styles.scss'
 
 const Home = () => {
     const [theme, updateTheme] = useState(InitialTheme)
-    const [bannerAnimationState, updateBannerAnimationState] = useState(BannerAnimationStart)
+    const [bannerAnimationState, updateBannerAnimationState] = useState(BannerAnimationEnd)
     const projectDivRef = useRef(null)
 
     const ToggleTheme = () => {

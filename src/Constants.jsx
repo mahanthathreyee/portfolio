@@ -1,4 +1,5 @@
 import { faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons'
+import Styles from './styles/styles.scss'
 
 export const ThemeConstants = {
     Dark: "dark",
@@ -38,3 +39,13 @@ export const IconData = {
 export const Image1AnimationTime = 8500
 export const Image2AnimationTime = 8500
 export const Image3AnimationTime = 8500
+
+export const ProjectData = [
+    {
+        className: Styles.Project1,
+        title: "SASTRA's E-Magazine",
+        image: "/images/Illuminati_Logo.png",
+        url: "http://sastra.edu/illuminati",
+        github: "https://github.com/mahanthathreyee/SASTRA-Illuminati-Website"
+    }
+]

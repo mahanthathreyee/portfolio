@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {IconData} from '../Constants'
+import { IconData } from '../Constants'
 import Styles from '../styles/styles.scss'
 
 const IconWrapper = (props) => {

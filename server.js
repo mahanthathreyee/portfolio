@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/pages/index.html');
 })
 
+app.use('/images', express.static(__dirname + '/Assets/Images/'))
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!\n');
 });

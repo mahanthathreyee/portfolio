@@ -1,0 +1,102 @@
+.Card {
+    width: 75%;
+    height: 75%;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    
+    transition: all 0.5s ease, box-shadow 0.5s 0.25s ease;
+
+    .CardBanner {
+        height: 75%;
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        margin: 0 auto;
+
+        &.Project1 {
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+
+    .CardDetails {
+        height: 25%;
+        width: 100%;
+
+        position: relative;
+        overflow-y: hidden;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+        background: linear-gradient(0deg, #ffffff 50%, transparent 50%);
+        background-size: 100% 200%;
+        background-position: top;
+        transition: all 0.5s ease;
+        
+        .Title {
+            padding: 0;
+            text-align: left;
+
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            transition: all 0.5s ease;
+        }
+
+        .CardLinks {
+            position: relative;
+            top: 100%;
+            transition: all 0.5s ease;
+            padding: 10px 0;
+            
+            .ProjectIcons {
+                font-size: 25px;
+                margin-left: 25px;
+                color: #000000;
+                
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                text-decoration: none;
+                padding: 5px 10px;
+                transition: all 0.5s ease;
+
+
+                &:hover {
+                    background: #000000;
+                    color: #ffffff;
+                }
+
+                .LinkName {
+                    font-family: 'Space Mono', monospace;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    
+
+    &:hover {
+        .CardDetails {
+            background-position: bottom;
+            .Title {
+                color: #000000;
+                bottom: calc(25% + 25px);
+            }
+            .CardLinks {
+                top: calc(75% - 25px);
+            }
+        }
+    }
+}

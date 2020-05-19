@@ -1,8 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
 import ThemeContext from '../ThemeContext'
 import Styles from '../styles/styles.scss'
-import { ThemeConstants } from '../Constants';
-import ProjectImageHandler from './ProjectImageHandler';
+import { ThemeConstants } from '../Constants'
+import ProjectImageHandler from './ProjectImageHandler'
+import ProjectCard from './ProjectCards/ProjectCard'
 
 const Projects = (props) => {
     const [topOfPage, updateTopOfPage] = useState(false)
@@ -32,8 +33,12 @@ const Projects = (props) => {
         <div className={ `${ Styles.Projects } ${ themeStyle }` } ref={ divRef } >
             <h1 class={ Styles.Title }>PROJECTS</h1>
             {topOfPage &&
-                <ProjectImageHandler />
+                <div className={ Styles.ProjectWrapper }>
+                    <ProjectImageHandler />
+                    <ProjectCard />
+                </div>
             }
+           
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faCodepen, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import Styles from './styles/styles.scss'
 
 export const ThemeConstants = {
@@ -22,6 +22,7 @@ export const HomeOnLoadAnimationConstants = {
 
 export const Github = "Github"
 export const Codepen = "Codepen"
+export const LinkedIn = "LinkedIn"
 
 export const IconData = {
     [Github]: {
@@ -33,7 +34,12 @@ export const IconData = {
         name: 'Codepen',
         url: 'https://codepen.io/mahanthathreyee',
         icon: faCodepen
-    }
+    },
+    [LinkedIn]: {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/mahanthathreyee/',
+        icon: faLinkedin
+    }   
 }
 
 export const Image1AnimationTime = 8500

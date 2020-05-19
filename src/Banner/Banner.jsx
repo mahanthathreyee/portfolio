@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ThemeContext from '../ThemeContext'
 import SocialConnect from '../data/SocialIconData'
 import HeadingHandler from './Welcome/HeadingHandler'
-import { Github, Codepen, ThemeConstants, BannerAnimationEnd } from '../Constants'
+import { Github, Codepen, LinkedIn, ThemeConstants, BannerAnimationEnd } from '../Constants'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import Styles from '../styles/styles.scss'
 
@@ -29,7 +29,7 @@ const Banner = (props) => {
             <HeadingHandler animationComplete={ displayCaption }/>
             <div className={ `${ Styles.Caption } ${ captionVisibility }` } >
                 <h4>Software Developer</h4>
-                <SocialConnect icons={[Github, Codepen]} />
+                <SocialConnect icons={[Github, Codepen, LinkedIn]} />
             </div>
             <div onClick={ scrollToProject } className={ `${ Styles.DownArray } ${ arrowVisibility }` }>
                 <FontAwesomeIcon className={ Styles.Icon } icon={ faChevronDown } />

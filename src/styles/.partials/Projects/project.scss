@@ -16,6 +16,8 @@
         width: 100%;
         height: calc(100% - 100px);
         display: inline-flex;
+
+        transition: all 0.5s ease;
         
         .ProjectImageHandler {
             width: 25%;

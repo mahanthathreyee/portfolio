@@ -8,8 +8,32 @@
         }
 
         .Card {
-            background: #1E1D21;
+            background: map-get($dark_theme, "dark_2");
             box-shadow: 0 0 0 0 #000000;
+
+            .CardDetails {
+                background: linear-gradient(0deg, map-get($dark_theme, "foreground") 50%, transparent 50%);
+                background-size: 100% 200%;
+                background-position: top;
+
+                .ProjectIcons {
+                    color: map-get($dark_theme, "background");
+
+                    &:hover {
+                        background: map-get($dark_theme, "background");
+                        color: map-get($dark_theme, "foreground");
+                    }
+                }
+            }
+
+            &:hover {
+                .CardDetails {
+                    background-position: bottom;
+                    .Title {
+                        color: map-get($dark_theme, "background");
+                    }
+                }
+            }
         }
     }
 }

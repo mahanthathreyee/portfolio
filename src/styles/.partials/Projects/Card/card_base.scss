@@ -37,9 +37,6 @@
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
 
-        background: linear-gradient(0deg, #ffffff 50%, transparent 50%);
-        background-size: 100% 200%;
-        background-position: top;
         transition: all 0.5s ease;
         
         .Title {
@@ -61,7 +58,6 @@
             .ProjectIcons {
                 font-size: 25px;
                 margin-left: 25px;
-                color: #000000;
                 
                 display: inline-flex;
                 align-items: center;
@@ -70,12 +66,6 @@
                 text-decoration: none;
                 padding: 5px 10px;
                 transition: all 0.5s ease;
-
-
-                &:hover {
-                    background: #000000;
-                    color: #ffffff;
-                }
 
                 .LinkName {
                     font-family: 'Space Mono', monospace;
@@ -89,9 +79,7 @@
 
     &:hover {
         .CardDetails {
-            background-position: bottom;
             .Title {
-                color: #000000;
                 bottom: calc(25% + 25px);
             }
             .CardLinks {

@@ -4,6 +4,8 @@ import Styles from '../styles/styles.scss'
 import { ThemeConstants } from '../Constants'
 import ProjectImageHandler from './ProjectImageHandler'
 import ProjectCard from './ProjectCards/ProjectCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
 
 const Projects = (props) => {
     const [topOfPage, updateTopOfPage] = useState(false)
@@ -31,7 +33,10 @@ const Projects = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.Projects } ${ themeStyle }` } ref={ divRef } >
-            <h1 class={ Styles.Title }>PROJECTS</h1>
+            <h1 className={ Styles.Title }>
+                <FontAwesomeIcon icon={ faLightbulb } />
+                PROJECTS
+            </h1>
             {topOfPage &&
                 <div className={ Styles.ProjectWrapper }>
                     <ProjectImageHandler />

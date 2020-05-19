@@ -23,6 +23,10 @@
                 background: linear-gradient(0deg, map-get($light_theme, "foreground") 50%, transparent 50%);
                 background-size: 100% 200%;
                 background-position: top;
+                
+                .Title {
+                    color: map-get($light_theme, "foreground");
+                }
 
                 .ProjectIcons {
                     color: map-get($light_theme, "background");

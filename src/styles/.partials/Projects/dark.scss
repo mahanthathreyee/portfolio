@@ -16,6 +16,10 @@
                 background-size: 100% 200%;
                 background-position: top;
 
+                .Title {
+                    color: map-get($dark_theme, "foreground");
+                }
+
                 .ProjectIcons {
                     color: map-get($dark_theme, "background");
 

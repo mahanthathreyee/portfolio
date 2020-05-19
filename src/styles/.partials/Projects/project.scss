@@ -10,6 +10,10 @@
         font-size: 3em;
         padding-top: 25px;
         max-height: 100px;
+        
+        svg {
+            margin-right: 15px;
+        }
     }
 
     .ProjectWrapper {
@@ -31,7 +35,13 @@
             height: 100%;
             position: relative;
 
+            visibility: visible;
+            opacity: 0;
+            transition: all 0.5s ease;
             
+            &.ProjectVisible {
+                opacity: 1;
+            }
         }
     }
 

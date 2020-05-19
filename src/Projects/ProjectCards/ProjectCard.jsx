@@ -20,7 +20,6 @@ const CardBanner = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.CardBanner } ${ props.Project['className'] } ${ themeStyle }` }>
-            {console.log(props)}
             <img src={ props.Project['image'] } />
         </div>
     )
@@ -40,18 +39,25 @@ const CardDetails = (props) => {
 
 const ProjectCard = () => {
     const [projectIndex, updateProjectIndex] = useState(0)
+    const [projectVisibility, updateProjectVisbility] = useState(null)
 
     useEffect(() => {
         setTimeout(() => {
-            updateProjectIndex((projectIndex + 1) % ProjectData.length)
-        }, 5000)
-    })
+            updateProjectVisbility(Styles.ProjectVisible)
+        }, 250)
+
+        // To be set more projects come in
+        // setInterval(() => {
+        //     updateProjectIndex((projectIndex + 1) % ProjectData.length)
+        // }, 5000)
+    }, [projectVisibility, projectIndex])
 
 
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return (
-        <div className={ `${ Styles.ProjectCard } ${ themeStyle }` }>
-            <div className={ Styles.Card }>
+        <div className={ `${ Styles.ProjectCard } ${ projectVisibility } ${ themeStyle }` }>
+            { console.log(projectVisibility) }
+            <div className={ `${ Styles.Card }` }>
                <CardBanner Project={ ProjectData[projectIndex] } />
                <CardDetails Project={ ProjectData[projectIndex] } />
             </div>

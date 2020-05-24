@@ -9,7 +9,6 @@ const lightTheme = "light";
 router.get('/', (req, res) => {
 	if(! req.session.theme)
 		req.session.theme = darkTheme;	//Default
-	console.log("Current theme = " + req.session.theme);
 	res.json({
 		theme: req.session.theme
 	})
@@ -22,8 +21,6 @@ router.post('/', (req, res) => {
 			case darkTheme: req.session.theme = darkTheme;	break;
 			case lightTheme: req.session.theme = lightTheme;	break;
 		}
-
-		console.log("New theme set = " + req.session.theme);
 		res.end();
 	}
 })

@@ -56,7 +56,6 @@ const ProjectCard = () => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return (
         <div className={ `${ Styles.ProjectCard } ${ projectVisibility } ${ themeStyle }` }>
-            { console.log(projectVisibility) }
             <div className={ `${ Styles.Card }` }>
                <CardBanner Project={ ProjectData[projectIndex] } />
                <CardDetails Project={ ProjectData[projectIndex] } />

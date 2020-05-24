@@ -1,24 +1,34 @@
 const express = require('express');
-const webpack = require('webpack');;
-const path = require('path');
+const webpack = require('webpack');
+const session = require('express-session');
+const routes  = require('./routes/routes');
+const webpackConfig = require('./webpack.config.js');
+const { port, sessionSecret } = require('./config');
 
+//Initialize Express
 const app = express();
-const config = require('./webpack.config.js');
-const compiler = webpack(config);
 
+//Webpack
+const compiler = webpack(webpackConfig);
 app.use(require("webpack-dev-middleware")(compiler, { 
-  publicPath: config.output.publicPath
+	publicPath: webpackConfig.output.publicPath
 }));
 app.use(require("webpack-hot-middleware")(compiler, {
-  path: '/__webpack_hmr', heartbeat: 10 * 1000
+	path: '/__webpack_hmr', heartbeat: 10 * 1000
 }));
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/pages/index.html');
-})
+//Session initialization
+app.use(session({
+	secret: sessionSecret,
+	resave: true,
+	saveUninitialized: true
+}));
 
-app.use('/images', express.static(__dirname + '/Assets/Images/'))
+//Initializing JSON body for post requests
+app.use(express.json());
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!\n');
-});
+//Routing
+app.use("/", require('./routes/routes'));
+app.use("/theme", require('./routes/themeRoute')); 
+
+app.listen(port);

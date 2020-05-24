@@ -4,7 +4,7 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js --inspect",
     "build": "next build"
   },
   "repository": {
@@ -28,7 +28,9 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

@@ -17,7 +17,7 @@ const HeadingHandler = (props) => {
     const content = ["elcome", "aganth Seetharaman", "Maganth Seetharaman"]
     
     useEffect(() => {
-        if(headingState.animationState == AnimationConstants.Load) {
+        if(props.themeFetched && headingState.animationState == AnimationConstants.Load) {
             setTimeout(() => {
                 updateHeadingState({animationState: AnimationConstants.HideWelcome, contentClass: Styles.Invisible, pivotIndex: 0, contentIndex: 0})
             }, 1000)
@@ -37,13 +37,13 @@ const HeadingHandler = (props) => {
                 updateHeadingState({animationState: AnimationConstants.Done, pivotIndex: 1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 1 })
             }, 500)
         }
-        else {
+        else  if(headingState.animationState == AnimationConstants.Done) {
             setTimeout(() => {
-                updateHeadingState({animationState: AnimationConstants.Done, pivotIndex: -1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 2})
+                updateHeadingState({animationState: AnimationConstants.Complete, pivotIndex: -1, headingClass: Styles.Name, contentClass: Styles.Visible, contentIndex: 2})
                 props.animationComplete();
             }, 500)
         }
-    }, [headingState.animationState])
+    }, [headingState.animationState, props.themeFetched])
 
     return (
         <div className={ `${ Styles.HeadingHandler } ${ headingState.headingClass }` }>

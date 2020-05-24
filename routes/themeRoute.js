@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 //Theme constants
-const darkTheme = "Dark";
-const lightTheme = "Light";
+const darkTheme = "dark";
+const lightTheme = "light";
 
 
 router.get('/', (req, res) => {

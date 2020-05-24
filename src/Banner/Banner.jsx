@@ -26,7 +26,7 @@ const Banner = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.Banner } ${ themeStyle }` }>
-            <HeadingHandler animationComplete={ displayCaption }/>
+            <HeadingHandler animationComplete={ displayCaption } themeFetched={ props.themeFetched } />
             <div className={ `${ Styles.Caption } ${ captionVisibility }` } >
                 <h4>Software Developer</h4>
                 <SocialConnect icons={[Github, Codepen, LinkedIn]} />

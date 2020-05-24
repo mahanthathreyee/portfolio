@@ -17,7 +17,8 @@ export const HomeOnLoadAnimationConstants = {
     HideWelcome: "hideWelcome",
     FlipPivot: "flipPivot",
     RemovePivot: "removePivot",
-    Done: "done"
+    Done: "done",
+    Complete: "complete"
 }
 
 export const Github = "Github"

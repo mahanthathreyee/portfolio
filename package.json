@@ -4,7 +4,7 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js --inspect",
+    "start": "node server.js",
     "build": "next build"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

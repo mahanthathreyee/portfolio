@@ -29,6 +29,7 @@ app.use(express.json());
 
 //Routing
 app.use("/", require('./routes/routes'));
+app.use("/images", require('./routes/routes'));
 app.use("/theme", require('./routes/themeRoute')); 
 
 app.listen(port);

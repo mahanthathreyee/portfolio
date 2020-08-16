@@ -1,7 +1,7 @@
 import React, { useContext, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ThemeContext from '../ThemeContext'
-import SocialConnect from '../data/SocialIconData'
+import { SocialConnect } from '../Util'
 import HeadingHandler from './Welcome/HeadingHandler'
 import { Github, Codepen, LinkedIn, ThemeConstants, BannerAnimationEnd } from '../Constants'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'

@@ -57,3 +57,5 @@ export const ProjectData = [
         github: "https://github.com/mahanthathreyee/SASTRA-Illuminati-Website"
     }
 ]
+
+export const TextColors = [ Styles.red, Styles.blue, Styles.green, Styles.purple, Styles.orange ]

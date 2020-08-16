@@ -20,8 +20,7 @@ const CardBanner = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.CardBanner } ${ props.Project['className'] } ${ themeStyle }` }>
-            { console.log(props.hoveredState) }
-            <img src={ props.hoveredState ? props.Project['imageHover'] : props.Project['imageHover'] } />
+            <img src={ props.hoveredState ? props.Project['imageHover'] : props.Project['image'] } />
         </div>
     )
 }

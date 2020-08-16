@@ -33,7 +33,7 @@
         .ProjectImageHandler {
             width: 25%;
             height: 100%;
-            margin-left: 25px;
+            margin: 0 50px;
             position: relative;
         }
 
@@ -44,6 +44,7 @@
 
             visibility: visible;
             opacity: 0;
+            overflow: hidden;
             transition: all 0.5s ease;
             
             &.ProjectVisible {

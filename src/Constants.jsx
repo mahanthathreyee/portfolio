@@ -52,9 +52,15 @@ export const ProjectData = [
         className: Styles.Project1,
         title: "SASTRA's E-Magazine",
         image: "/images/Illuminati_Logo.png",
-        imageHover: "/images/Illuminati_Logo.gif",
         url: "http://sastra.edu/illuminati",
         github: "https://github.com/mahanthathreyee/SASTRA-Illuminati-Website"
+    },
+    {
+        className: Styles.Project2,
+        title: "International PewDiePie Day",
+        image: "/images/International_PewDiePie_Day.png",
+        url: false,
+        github: "https://github.com/international-pewdiepie-day/IPD-Website"
     }
 ]
 

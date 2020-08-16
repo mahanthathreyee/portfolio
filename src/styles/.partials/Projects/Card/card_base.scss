@@ -10,6 +10,9 @@
     transform: translate(-50%, -50%);
     
     transition: all 0.5s ease, box-shadow 0.5s 0.25s ease;
+    &.Project2 {
+        background: #ff003f;
+    }
 
     .CardBanner {
         height: 75%;
@@ -20,19 +23,17 @@
         align-items: center;
         
         margin: 0 auto;
-
-        &.Project1 {
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: contain;
-            }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
         }
     }
 
     .CardDetails {
         height: 25%;
         width: 100%;
+        padding-bottom: 5px;
 
         position: relative;
         overflow-y: hidden;
@@ -45,9 +46,10 @@
             padding: 0;
             text-align: left;
 
+            font-size: 2.5em;
             position: absolute;
             left: 20px;
-            bottom: 0;
+            bottom: 5px;
             transition: all 0.5s ease;
         }
 
@@ -82,7 +84,7 @@
     &:hover {
         .CardDetails {
             .Title {
-                bottom: calc(25% + 25px);
+                bottom: calc(25% + 50px);
             }
             .CardLinks {
                 top: calc(75% - 25px);

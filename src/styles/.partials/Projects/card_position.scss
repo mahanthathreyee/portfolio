@@ -1,0 +1,22 @@
+.ProjectCard {
+    &.First {
+        .Card {
+            &:nth-child(1) {
+                left: 50%;
+            }
+            &:nth-child(2) {
+                left: 130%;
+            }
+        }
+    }
+    &.Second {
+        .Card {
+            &:nth-child(1) {
+                left: -30%;
+            }
+            &:nth-child(2) {
+                left: 50%;
+            }
+        }
+    }
+}

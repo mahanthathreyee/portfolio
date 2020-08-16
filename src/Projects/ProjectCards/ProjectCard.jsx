@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import ThemeContext from '../../ThemeContext'
 import Styles from '../../styles/styles.scss'
 import { ThemeConstants, ProjectData, Github } from '../../Constants'
@@ -20,7 +20,8 @@ const CardBanner = (props) => {
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
         <div className={ `${ Styles.CardBanner } ${ props.Project['className'] } ${ themeStyle }` }>
-            <img src={ props.Project['image'] } />
+            { console.log(props.hoveredState) }
+            <img src={ props.hoveredState ? props.Project['imageHover'] : props.Project['imageHover'] } />
         </div>
     )
 }
@@ -40,6 +41,19 @@ const CardDetails = (props) => {
 const ProjectCard = () => {
     const [projectIndex, updateProjectIndex] = useState(0)
     const [projectVisibility, updateProjectVisbility] = useState(null)
+    const [cardHoveredState, updateCardHoveredState] = useState(false)
+    const projectCardRef = useRef(null);
+
+    useEffect(() => {
+        if (null != projectCardRef.current) {
+            projectCardRef.current.addEventListener("mouseover", handleCardMouseover, false)
+            projectCardRef.current.addEventListener("mouseleave", handleCardMouseout, false)
+            return () => {
+                projectCardRef.current.removeEventListener("mouseover", handleCardMouseover, false)
+                projectCardRef.current.removeEventListener("mouseleave", handleCardMouseout, false)
+            }
+        }
+    }, [projectCardRef.current])
 
     useEffect(() => {
         setTimeout(() => {
@@ -53,11 +67,18 @@ const ProjectCard = () => {
     }, [projectVisibility, projectIndex])
 
 
+    function handleCardMouseover() {
+        updateCardHoveredState(true)
+    }
+    function handleCardMouseout() {
+        updateCardHoveredState(false)
+    }
+
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return (
         <div className={ `${ Styles.ProjectCard } ${ projectVisibility } ${ themeStyle }` }>
-            <div className={ `${ Styles.Card }` }>
-               <CardBanner Project={ ProjectData[projectIndex] } />
+            <div ref={ projectCardRef } className={ `${ Styles.Card }` }>
+               <CardBanner hoveredState = { cardHoveredState } Project={ ProjectData[projectIndex] } />
                <CardDetails Project={ ProjectData[projectIndex] } />
             </div>
         </div>

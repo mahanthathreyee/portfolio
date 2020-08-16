@@ -32,8 +32,7 @@ function ThemeToggleButton(props) {
     return (
         <div onClick={ props.toggleTheme } className={ `${ Styles.ThemeToggleButton } ${ ButtonIcon( buttonTheme ) }` }>
             <div className={ Styles.ThemeToggleIcon }>
-                { buttonTheme == ThemeConstants.Dark ? <FontAwesomeIcon icon={ faSun } /> : <FontAwesomeIcon icon={ faMoon } />
-                }
+                { buttonTheme == ThemeConstants.Dark ? <FontAwesomeIcon icon={ faSun } /> : <FontAwesomeIcon icon={ faMoon } /> }
             </div>
             <p className={ Styles.ThemeToggleText }>Theme Toggle</p>
         </div>

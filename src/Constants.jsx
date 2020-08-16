@@ -52,6 +52,7 @@ export const ProjectData = [
         className: Styles.Project1,
         title: "SASTRA's E-Magazine",
         image: "/images/Illuminati_Logo.png",
+        imageHover: "/images/Illuminati_Logo.gif",
         url: "http://sastra.edu/illuminati",
         github: "https://github.com/mahanthathreyee/SASTRA-Illuminati-Website"
     }

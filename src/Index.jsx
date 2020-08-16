@@ -9,7 +9,7 @@ import Styles from './styles/styles.scss'
 
 const Home = () => {
     const [theme, updateTheme] = useState(InitialTheme)
-    const [bannerAnimationState, updateBannerAnimationState] = useState(BannerAnimationStart)
+    const [bannerAnimationState, updateBannerAnimationState] = useState(BannerAnimationEnd)
     const [themeFetchStatus, updateThemeFetchedStatus] = useState(false)
     const projectDivRef = useRef(null)
 

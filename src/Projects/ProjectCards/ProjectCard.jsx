@@ -37,31 +37,58 @@ const CardDetails = (props) => {
     )
 }
 
+const Card = (props) => {
+    return (
+        <div className={ `${ Styles.Card } ${ props.classAttr }` } >
+            <CardBanner Project={ props.data } />
+            <CardDetails Project={ props.data } />
+        </div>
+    )
+}
+
 const ProjectCard = () => {
     const [projectIndex, updateProjectIndex] = useState(0)
     const [projectVisibility, updateProjectVisbility] = useState(null)
+    const [cardStyleClass, updateCardStyleClass] = useState(Styles.First)
 
     useEffect(() => {
         setTimeout(() => {
             updateProjectVisbility(Styles.ProjectVisible)
         }, 250)
+    }, [projectVisibility])
 
-        // To be set more projects come in
-        // setInterval(() => {
-        //     updateProjectIndex((projectIndex + 1) % ProjectData.length)
-        // }, 5000)
-    }, [projectVisibility, projectIndex])
+    useEffect(() => {
+        updateCardStyleClass(getCardClass())
+    }, [projectIndex])
+
+    function updateCard(cardSelected) {
+        updateProjectIndex(cardSelected);
+    }
+
+    function currentCard(index) {
+        if(index == projectIndex)
+            return true
+        return false
+    }
+
+    function getCardClass() {
+        switch(projectIndex) {
+            case 0: return Styles.First
+            case 1: return Styles.Second;
+        }
+    }
 
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return (
-        <div className={ `${ Styles.ProjectCard } ${ projectVisibility } ${ themeStyle } ${ Styles.Second }` }>
+        <div className={ `${ Styles.ProjectCard } ${ projectVisibility } ${ themeStyle } ${ cardStyleClass }` }>
             {
                 ProjectData.map((data, i) => {
                     return(
-                        <div className={ `${ Styles.Card } ${ data['className'] }` }>
-                            <CardBanner Project={ data } />
-                            <CardDetails Project={ data } />
-                        </div>
+                        <Card classAttr={ `${ data['className'] } ${ currentCard(i) ? Styles.ActiveCard : "" }` } selector={ updateCard } data={ data } key={ i } />
+                        // <div className={ `${ Styles.Card } ${ data['className'] } ${ currentCard(i) ? Styles.ActiveCard : "" }` } selector={ updateCard } key = { i } >
+                        //     <CardBanner Project={ data } />
+                        //     <CardDetails Project={ data } />
+                        // </div>
                     )
                 })
             }

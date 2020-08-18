@@ -8,11 +8,11 @@
     border: 1px solid #eee;
     border-radius: 25px;
     transform: translate(-50%, -50%);
+
+    opacity: 0.3;
+    cursor: pointer;
     
     transition: all 0.5s ease, box-shadow 0.5s 0.25s ease;
-    &.Project2 {
-        background: #ff003f;
-    }
 
     .CardBanner {
         height: 75%;
@@ -79,16 +79,22 @@
         }
     }
 
-    
+    &.ActiveCard {
+        opacity: 1;
+    }
 
     &:hover {
-        .CardDetails {
-            .Title {
-                bottom: calc(25% + 50px);
-            }
-            .CardLinks {
-                top: calc(75% - 25px);
+        &.ActiveCard {
+            .CardDetails {
+                background-position: bottom;
+                .Title {
+                    bottom: calc(25% + 50px);
+                }
+                .CardLinks {
+                    top: calc(75% - 25px);
+                }
             }
         }
+        opacity: 1;
     }
 }

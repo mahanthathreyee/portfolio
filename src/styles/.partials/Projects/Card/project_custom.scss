@@ -1,0 +1,13 @@
+.Card {
+    &.Project1 {
+        background: #000000 !important;
+        .CardDetails {
+            .Title {
+                color: #fff !important;
+            }
+        }
+    }
+    &.Project2 {
+        background: #ff003f !important;
+    }
+}

@@ -32,7 +32,6 @@
 
             &:hover {
                 .CardDetails {
-                    background-position: bottom;
                     .Title {
                         color: map-get($dark_theme, "background");
                     }

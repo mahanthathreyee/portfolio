@@ -11,14 +11,6 @@
             background: map-get($light_theme, "background");
             box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
-            .CardBanner {
-                &.Project1 {
-                    img {
-                        filter: invert(1);
-                    }
-                }
-            }
-
             .CardDetails {
                 background: linear-gradient(0deg, map-get($light_theme, "foreground") 50%, transparent 50%);
                 background-size: 100% 200%;
@@ -40,7 +32,6 @@
 
             &:hover {
                 .CardDetails {
-                    background-position: bottom;
                     .Title {
                         color: map-get($light_theme, "background");
                     }

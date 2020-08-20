@@ -7,6 +7,12 @@
             color: map-get($light_theme, "foreground");
         }
 
+        .Title {
+            &:hover {
+                text-shadow: 5px 5px rgba(0, 0, 0, 1);
+            }
+        }
+
         .Card {
             background: map-get($light_theme, "background");
             box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -17,7 +23,7 @@
                 background-position: top;
                 
                 .Title {
-                    color: map-get($light_theme, "foreground");
+                    color: map-get($light_theme, "background");
                 }
 
                 .ProjectIcons {

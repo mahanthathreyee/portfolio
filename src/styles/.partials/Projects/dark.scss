@@ -7,6 +7,12 @@
             color: map-get($dark_theme, "foreground");
         }
 
+        .Title {
+            &:hover {
+                text-shadow: 5px 5px rgba(255, 255, 255, 0.8);
+            }
+        }
+
         .Card {
             background: map-get($dark_theme, "dark");
             box-shadow: 0 0 0 0 #000000;

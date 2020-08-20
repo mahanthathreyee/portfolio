@@ -8,11 +8,10 @@ import { faLink } from '@fortawesome/free-solid-svg-icons'
 
 
 const ProjectIcons = (props) => {
+    let domElement = props.Link ? <a className={ Styles.ProjectIcons } href={ props.Link }><FontAwesomeIcon icon={ props.Icon } /><p className={ Styles.LinkName }>{ props.Name }</p></a> : null
+    
     return(
-        <a className={ Styles.ProjectIcons } href={ props.Link }>
-            <FontAwesomeIcon icon={ props.Icon } />
-            <p className={ Styles.LinkName }>{ props.Name }</p>
-        </a>
+        domElement
     )
 }
 
@@ -38,8 +37,23 @@ const CardDetails = (props) => {
 }
 
 const Card = (props) => {
+    const CardRef = useRef(null)
+
+    useEffect(() => {
+        if(null != CardRef.current) {
+            CardRef.current.addEventListener('mousedown', handleClick, false)
+            return () => {
+                CardRef.current.removeEventListener('mousedown', handleClick, false)
+            }
+        }
+    }, [CardRef.current])
+
+    function handleClick() {
+        props.selector(props.cardIndex)
+    }
+
     return (
-        <div className={ `${ Styles.Card } ${ props.classAttr }` } >
+        <div ref={ CardRef } className={ `${ Styles.Card } ${ props.classAttr }` } >
             <CardBanner Project={ props.data } />
             <CardDetails Project={ props.data } />
         </div>
@@ -84,11 +98,7 @@ const ProjectCard = () => {
             {
                 ProjectData.map((data, i) => {
                     return(
-                        <Card classAttr={ `${ data['className'] } ${ currentCard(i) ? Styles.ActiveCard : "" }` } selector={ updateCard } data={ data } key={ i } />
-                        // <div className={ `${ Styles.Card } ${ data['className'] } ${ currentCard(i) ? Styles.ActiveCard : "" }` } selector={ updateCard } key = { i } >
-                        //     <CardBanner Project={ data } />
-                        //     <CardDetails Project={ data } />
-                        // </div>
+                        <Card classAttr={ `${ data['className'] } ${ currentCard(i) ? Styles.ActiveCard : "" }` } selector={ updateCard } cardIndex={ i } data={ data } key={ i } />
                     )
                 })
             }

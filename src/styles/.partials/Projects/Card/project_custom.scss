@@ -1,13 +1,10 @@
-.Card {
-    &.Project1 {
-        background: #000000 !important;
-        .CardDetails {
-            .Title {
-                color: #fff !important;
-            }
+.Projects {
+    .Card {
+        &.Project1 {
+            background: #000000 !important;
         }
-    }
-    &.Project2 {
-        background: #ff003f !important;
+        &.Project2 {
+            background: #ff003f !important;
+        }
     }
 }

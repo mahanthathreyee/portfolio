@@ -1,10 +1,9 @@
 .Banner {
     &.Dark {
-        background: map-get($dark_theme, "background");
-        color: map-get($dark_theme, "foreground");
+        color: #ffffff;
 
         a {
-            color: map-get($dark_theme, "foreground");
+            color: #ffffff;
         }
     }
 }

@@ -1,5 +1,5 @@
-.BackgroundImage {
-    &.Light {
+.Light {
+    .BackgroundImage {
         .BackgroundColor1 { fill: #531331 }
         .BackgroundColor2 { fill: #3f0021; }
         .BackgroundColor3 { fill: #672140; }
@@ -9,5 +9,9 @@
         .BackgroundColor7 { fill: #812e52; }
         .BackgroundColor8 { fill: #631f3d; }
         .BackgroundColor9 { fill: #7C4A74; }
+
+        .Moon {
+            transform: translateY(-100vh);
+        }
     }
 }

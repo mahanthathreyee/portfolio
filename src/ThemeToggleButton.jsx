@@ -26,7 +26,7 @@ function ThemeToggleButton(props) {
         else if(val == ThemeConstants.Dark)
             return Styles.Dark
         else    
-            return Styles.Switch
+            return ""
     }
 
     return (

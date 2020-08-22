@@ -4,7 +4,47 @@
     height: 100%;
     width: 100%;
     
-    * {
-        @include transition(fill 0.5s ease-in-out);
+    @for $i from 1 through 9 {
+        .BackgroundColor#{ $i } {
+            @include transition(fill 0.25s linear);
+            will-change: fill;
+        }
+    }
+    .Moon, .Sun {
+        transform: translateY(0);
+        @include transition(transform 0.5s linear);
+    }
+
+    @for $i from 1 through 2 {
+        .Sun#{ $i }, .Moon#{ $i } {
+            transform-origin: center;
+            transform-box: fill-box;
+            @include animation(SkyObjectsGlow 5s linear infinite alternate)
+        }
+    }
+
+    .HABalloon {
+        @include animation(BalloonFly 5s linear infinite alternate);
+        &:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+    }
+}
+
+@include keyframes(BalloonFly) {
+    from {
+        transform: translate3d(0, 0px, 0);
+    }
+    to {
+        transform: translate3d(0, 50px, 0);
+    }
+}
+
+@include keyframes(SkyObjectsGlow) {
+    $radiusScale: 1.1;
+    from {
+        transform: scale(1, 1);
+    } to {
+        transform: scale($radiusScale, $radiusScale);
     }
 }

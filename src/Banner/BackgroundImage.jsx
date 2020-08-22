@@ -1,12 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
-import ThemeContext from '../ThemeContext'
-import { ThemeConstants } from '../Constants'
 import Styles from '../styles/styles.scss'
 
 const BackgroundImage = () => {
-    const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;
     return(
-        <div className={ `${ Styles.BackgroundImage } ${ themeStyle }` }>
+        <div className={ Styles.BackgroundImage }>
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 2048 1080" preserveAspectRatio="xMidYMid slice">
                 <g transform="matrix(.71807 0 0 .59975 1.506 .453)">
                     <linearGradient id="MorningSky" x1="50%" y1="100%" x2="50%" y2="0%">
@@ -38,9 +35,16 @@ const BackgroundImage = () => {
                         </stop>
                     </linearGradient>
                     <path className={ Styles.BackgroundColor9 } d="M0 0H2850V1800H0z" />
-                    <circle cx="1409.805" cy="990.666" r="597.051" fill="#e5edd4" opacity="0.08" />
-                    <circle cx="1409.805" cy="990.666" r="429.67" fill="#e5edd4" opacity="0.08" />
-                    <circle cx="1409.805" cy="990.666" r="316.806" fill="#fff" />
+                    <g className={ Styles.Moon }>
+                        <circle className={ Styles.Moon1 } cx="1409.805" cy="400.666" r="250" fill="#e5edd4" opacity="0.08" />
+                        <circle className={ Styles.Moon2 } cx="1409.805" cy="400.666" r="175" fill="#e5edd4" opacity="0.08" />
+                        <circle className={ Styles.Moon3 } cx="1409.805" cy="400.666" r="100" fill="#fff" />
+                    </g>
+                    <g className={ Styles.Sun }>
+                        <circle className={ Styles.Sun1 } cx="1409.805" cy="990.666" r="597.051" fill="#e5edd4" opacity="0.08" />
+                        <circle className={ Styles.Sun2 } cx="1409.805" cy="990.666" r="429.67" fill="#e5edd4" opacity="0.08" />
+                        <circle className={ Styles.Sun3 } cx="1409.805" cy="990.666" r="316.806" fill="#fff" />
+                    </g>
                     <g>
                         <g>
                             <g>
@@ -359,11 +363,11 @@ const BackgroundImage = () => {
                         </g>
                     </g>
                     <g>
-                        <g className={ Styles.BackgroundColor8 }>
+                        <g className={ `${ Styles.BackgroundColor8 } ${ Styles.HABalloon }` }>
                             <path d="M2278.681 669.782c17.341-24.772 50.528-75.421 50.528-100.234 0-33.586-27.227-60.814-60.813-60.814-33.587 0-60.814 27.227-60.814 60.814 0 24.813 33.187 75.462 50.528 100.234z" />
                             <path d="M2256.966 681.962H2279.031V696.321H2256.966z" />
                         </g>
-                        <g className={ Styles.BackgroundColor7 }>
+                        <g className={ `${ Styles.BackgroundColor7 } ${ Styles.HABalloon }` }>
                             <path d="M2091.149 783.952c12.051-17.215 35.115-52.414 35.115-69.658 0-23.341-18.922-42.263-42.263-42.263-23.341 0-42.263 18.922-42.263 42.263 0 17.244 23.064 52.443 35.115 69.658z" />
                             <path d="M2076.058 792.416H2091.392V802.3950000000001H2076.058z" />
                         </g>

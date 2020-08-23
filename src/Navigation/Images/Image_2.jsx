@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Styles from '../../styles/styles.scss'
 
 const Image2 = () => {
 
     const [animationState, updateAnimationState] = useState(Styles.Start)
     const [contribAnimationState, updateContribState] = useState(Styles.NoContrib)
+    const timerRef1 = useRef(null)
+    const timerRef2 = useRef(null)
 
     useEffect(() => {
         if(animationState == Styles.End) return
-        setTimeout(() => {
-            updateContribState(Styles.ViewContrib)
-        }, 2000)
-        setTimeout(() => {
-            updateAnimationState(Styles.End)
-        }, 7000)
+        else {
+            timerRef1.current = setTimeout(() => {
+                updateContribState(Styles.ViewContrib)
+            }, 2000)
+            timerRef2.current = setTimeout(() => {
+                updateAnimationState(Styles.End)
+            }, 7000)
+            return () => {
+                clearTimeout(timerRef1.current)
+                clearTimeout(timerRef2.current)
+            }
+        }
 
     }, [animationState])
 

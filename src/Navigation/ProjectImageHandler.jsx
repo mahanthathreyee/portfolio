@@ -20,10 +20,12 @@ const ProjectImageHandler = (props) => {
     const imageTimer = useRef(null)
     
     useEffect(() => {
-        if(props.animate) {
-            imageTimer.current = setTimeout(() => {
-                updateIndex()
-            }, imageAnimationsTime[currentImageIndex])
+        imageTimer.current = setTimeout(() => {
+            updateIndex()
+        }, imageAnimationsTime[currentImageIndex])
+
+        return () => {
+            clearTimeout(imageTimer.current)
         }
     }, [currentImageIndex])
 
@@ -36,16 +38,14 @@ const ProjectImageHandler = (props) => {
     }, [props.animate])
 
     const updateIndex = () => {
-        if(currentImageIndex == (imageAnimationsTime.length - 1))
-            updateCurrentImageIndex(0)
-        else
-            updateCurrentImageIndex(currentImageIndex + 1)
+        updateCurrentImageIndex( currentImageIndex => (currentImageIndex + 1) % imageAnimationsTime.length )
     }
 
     return(
         <div className={ Styles.ProjectImageHandler }>
-            {console.log(props.animate)}
-            <ImageSwitcher ImageIndex={ currentImageIndex } />
+            {props.animate && 
+                <ImageSwitcher ImageIndex={ currentImageIndex } />
+            }
         </div>
     )
 }

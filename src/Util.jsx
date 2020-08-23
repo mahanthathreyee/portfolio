@@ -1,9 +1,6 @@
-import React, { useRef, useEffect, useState, useContext } from 'react'
-import ThemeContext from './ThemeContext'
+import React, { useRef, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLightbulb as solidLightBulb } from '@fortawesome/free-solid-svg-icons'
-import { faLightbulb as regularLightBulb } from '@fortawesome/free-regular-svg-icons'
-import { IconData, TextColors, ThemeConstants } from './Constants'
+import { IconData, TextColors } from './Constants'
 import Styles from './styles/styles.scss'
 
 const IconWrapper = (props) => {
@@ -33,7 +30,7 @@ const SocialConnect = (props) => {
 }
 
 const HeadingCharAnimationOne = (props) => {
-    const [currentColor, updateCurrentColor] = useState(false)
+    const [currentColor, updateCurrentColor] = useState("")
     const colorIntervalHandler = useRef(null)
 
     useEffect(() => {
@@ -51,41 +48,17 @@ const HeadingCharAnimationOne = (props) => {
     }
 
     return (
-        <span className={ props['update'] ? getRandonColor() : "" }>{ props['character'] }</span>
+        <span className={ props['update'] ? currentColor : "" }>{ props['character'] }</span>
     )
 }
 
 const HeadingTextAnimationOne = (props) => {
-    const textDivRef = useRef(null)
-    const [ hoveredState, updateHoveredState ] = useState(false)
-
-    useEffect(() => {
-        if(null != textDivRef.current) {
-            textDivRef.current.addEventListener("mouseenter", handleMouseEnter, false)
-            textDivRef.current.addEventListener("mouseleave", handleMouseLeave, false)
-
-            return () => {
-                textDivRef.current.removeEventListener("mouseenter", handleMouseEnter, false)
-                textDivRef.current.removeEventListener("mouseleave", handleMouseEnter, false)
-            }
-        }
-    }, [textDivRef.current])
-
-    function handleMouseEnter() {
-        updateHoveredState(true)
-    }
-    
-    function handleMouseLeave() {
-        updateHoveredState(false)
-    }
-
     return(
-        <div ref={ textDivRef } className={ props['name'] }>
-            <FontAwesomeIcon icon={ hoveredState ? solidLightBulb : regularLightBulb } />
+        <div>
             {
                 props['text'].split('').map((c, i) => {
                     return( 
-                        <HeadingCharAnimationOne key={ i } update={ hoveredState } character={ c } />
+                        <HeadingCharAnimationOne key={ i } update={ props.hoveredState } character={ c } />
                     )
                 })
             }

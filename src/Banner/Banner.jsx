@@ -29,9 +29,9 @@ const Banner = (props) => {
         <div className={ `${ Styles.Banner } ${ themeStyle }` }>
             <BackgroundImage />
             <div className={ `${ Styles.Caption } ${ captionVisibility }` } >
-                <h4>Hi there, I am</h4>
+                <h4>Hi there! I am</h4>
             </div>
-            <HeadingHandler animationComplete={ displayCaption } themeFetched={ props.themeFetched } />
+            <HeadingHandler animationComplete={ displayCaption } />
             <div className={ `${ Styles.Caption } ${ captionVisibility }` } >
                 <SocialConnect icons={[Github, Codepen, LinkedIn]} />
             </div>

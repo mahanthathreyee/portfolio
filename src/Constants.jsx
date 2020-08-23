@@ -6,7 +6,8 @@ export const ThemeConstants = {
     Light: "light"
 }
 
-export const InitialTheme = ThemeConstants.Dark
+let currentHour = new Date().getHours();
+export const InitialTheme = localStorage.getItem('theme') == null ? ((currentHour >= 6 && currentHour <= 18) ? ThemeConstants.Light : ThemeConstants.Dark) : localStorage.getItem('theme')
 export const InitalThemeButton = InitialTheme == ThemeConstants.Light ? ThemeConstants.Dark : ThemeConstants.Light
 
 export const BannerAnimationStart = false

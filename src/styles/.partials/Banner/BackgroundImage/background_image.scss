@@ -3,6 +3,7 @@
     z-index: -1;
     height: 100%;
     width: 100%;
+    background: #000000;
     
     @for $i from 1 through 9 {
         .BackgroundColor#{ $i } {
@@ -34,7 +35,17 @@
         @include animation(CloudMove 25s linear infinite);
         @for $i from 1 through 8 {
             &:nth-child(#{ $i }) {
-                animation-delay: -#{ 1.33 * $i }s;
+                animation-delay: -#{ 1.33 * random() }s;
+            }
+        }
+    }
+    .Stars {
+        g {
+            @include animation(StarsGlow 3s linear infinite alternate);
+            @for $i from 1 through 70 {
+                &:nth-child(#{ $i }) {
+                    animation-delay: -#{ 1.33 * random() }s;
+                }
             }
         }
     }
@@ -64,5 +75,14 @@
     }
     100% {
         @include transform(translateX(200vw));
+    }
+}
+
+@include keyframes(StarsGlow) {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        opacity: 1;
     }
 }

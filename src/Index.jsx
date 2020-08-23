@@ -10,33 +10,11 @@ import Styles from './styles/styles.scss'
 const Home = () => {
     const [theme, updateTheme] = useState(InitialTheme)
     const [bannerAnimationState, updateBannerAnimationState] = useState(BannerAnimationEnd)
-    const [themeFetchStatus, updateThemeFetchedStatus] = useState(false)
     const projectDivRef = useRef(null)
 
     useEffect(() => {
-        if(! themeFetchStatus) {
-            setTimeout(() => {
-                fetch('/theme', {method: "GET"})
-                .then(res => res.json())
-                .then(res => {
-                    let currentTheme = res.theme;
-                    updateTheme( currentTheme == ThemeConstants.Light ? ThemeConstants.Light : ThemeConstants.Dark )
-                    updateThemeFetchedStatus(true)
-                })
-            }, 1000)
-        }
-    }, [themeFetchStatus])
-
-    useEffect(() => {
-        if(themeFetchStatus) {
-            fetch('/theme', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({"theme": theme})
-            })
-        }
+        localStorage.setItem('theme', theme)
+        updateTheme(theme)
     }, [theme])
 
     const ToggleTheme = () => {
@@ -47,7 +25,7 @@ const Home = () => {
         <div className={ Styles.Home }>
             <ThemeContext.Provider value={ theme }>
                 <div className={ Styles.SnapPage }>
-                    <Banner projectRef={ projectDivRef } animationComplete={  updateBannerAnimationState } themeFetched={ themeFetchStatus }  />
+                    <Banner projectRef={ projectDivRef } animationComplete={  updateBannerAnimationState } />
                 </div>
                 {bannerAnimationState &&
                     <div className={ Styles.SnapPage }>

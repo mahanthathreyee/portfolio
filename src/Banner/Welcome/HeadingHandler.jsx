@@ -17,7 +17,7 @@ const HeadingHandler = (props) => {
     const content = ["elcome", "aganth Seetharaman", "Maganth Seetharaman"]
     
     useEffect(() => {
-        if(props.themeFetched && headingState.animationState == AnimationConstants.Load) {
+        if(headingState.animationState == AnimationConstants.Load) {
             setTimeout(() => {
                 updateHeadingState({animationState: AnimationConstants.HideWelcome, contentClass: Styles.Invisible, pivotIndex: 0, contentIndex: 0})
             }, 1000)
@@ -43,7 +43,7 @@ const HeadingHandler = (props) => {
                 props.animationComplete();
             }, 500)
         }
-    }, [headingState.animationState, props.themeFetched])
+    }, [headingState.animationState])
 
     return (
         <div className={ `${ Styles.HeadingHandler } ${ headingState.headingClass }` }>

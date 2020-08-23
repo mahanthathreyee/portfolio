@@ -7,11 +7,10 @@
         .BackgroundColor5 { fill: #75294a; }
         .BackgroundColor6 { fill: #b34070; }
         .BackgroundColor7 { fill: #812e52; }
-        .BackgroundColor8 { fill: #631f3d; }
         .BackgroundColor9 { fill: #7C4A74; }
 
         .Moon {
-            transform: translateY(-100vh);
+            @include transform(translateY(-100vh));
         }
     }
 }

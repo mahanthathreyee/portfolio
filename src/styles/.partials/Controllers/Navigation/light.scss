@@ -1,0 +1,12 @@
+.NavBar {
+    &.Light {
+        .NavBarIcon {
+            span {
+                background: map-get($light_theme, "foreground");
+            }
+        }
+        .NavItemsHandler {
+            background: map-get($light_theme, "background");
+        }
+    }
+}

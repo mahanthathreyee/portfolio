@@ -37,7 +37,6 @@ const Projects = (props) => {
             </div> 
             {topOfPage &&
                 <div className={ Styles.ProjectWrapper }>
-                    <ProjectImageHandler />
                     <ProjectCard />
                 </div>
             }

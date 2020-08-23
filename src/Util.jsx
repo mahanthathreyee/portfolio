@@ -1,8 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
+import ThemeContext from './ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLightbulb as solidLightBulb } from '@fortawesome/free-solid-svg-icons'
 import { faLightbulb as regularLightBulb } from '@fortawesome/free-regular-svg-icons'
-import { IconData, TextColors } from './Constants'
+import { IconData, TextColors, ThemeConstants } from './Constants'
 import Styles from './styles/styles.scss'
 
 const IconWrapper = (props) => {

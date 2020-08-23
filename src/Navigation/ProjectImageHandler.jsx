@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Styles from '../styles/styles.scss'
 import { Image1AnimationTime, Image2AnimationTime, Image3AnimationTime } from '../Constants'
 import Image1 from './Images/Image_1'
@@ -15,21 +15,36 @@ const ImageSwitcher = (props) => {
     }
 }
 
-const ProjectImageHandler = () => {
+const ProjectImageHandler = (props) => {
     const [currentImageIndex, updateCurrentImageIndex] = useState(0)
+    const imageTimer = useRef(null)
     
     useEffect(() => {
-        setTimeout(() => {
-            if(currentImageIndex == (imageAnimationsTime.length - 1))
-                updateCurrentImageIndex(0)
-            else
-                updateCurrentImageIndex(currentImageIndex + 1)
-    
-        }, imageAnimationsTime[currentImageIndex])
+        if(props.animate) {
+            imageTimer.current = setTimeout(() => {
+                updateIndex()
+            }, imageAnimationsTime[currentImageIndex])
+        }
     }, [currentImageIndex])
+
+    useEffect(() => {
+        if(props.animate) {
+            updateIndex()
+        } else {
+            clearTimeout(imageTimer.current)
+        }
+    }, [props.animate])
+
+    const updateIndex = () => {
+        if(currentImageIndex == (imageAnimationsTime.length - 1))
+            updateCurrentImageIndex(0)
+        else
+            updateCurrentImageIndex(currentImageIndex + 1)
+    }
 
     return(
         <div className={ Styles.ProjectImageHandler }>
+            {console.log(props.animate)}
             <ImageSwitcher ImageIndex={ currentImageIndex } />
         </div>
     )

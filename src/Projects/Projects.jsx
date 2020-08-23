@@ -3,7 +3,6 @@ import ThemeContext from '../ThemeContext'
 import Styles from '../styles/styles.scss'
 import { HeadingTextAnimationOne } from '../Util'
 import { ThemeConstants } from '../Constants'
-import ProjectImageHandler from './ProjectImageHandler'
 import ProjectCard from './ProjectCards/ProjectCard'
 
 const Projects = (props) => {

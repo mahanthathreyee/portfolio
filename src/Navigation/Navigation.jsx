@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
-import ThemeContext from './ThemeContext'
-import { ThemeConstants } from './Constants'
-import Styles from './styles/styles.scss'
+import ThemeContext from '../ThemeContext'
+import { ThemeConstants } from '../Constants'
+import ProjectImageHandler from './ProjectImageHandler'
+import Styles from '../styles/styles.scss'
 
 const NavBarIcon = (props) => {
     return (
@@ -21,14 +22,14 @@ const NavBarIcon = (props) => {
 const NavItemsHandler = (props) => {
     return (
         <div className={ `${ Styles.NavItemsHandler } ${ props.navState }` }>
-
+            <ProjectImageHandler animate={ props.animate } />
         </div>
     )
 }
 
 const NavBar = () => {
     const navIcon = useRef(null)
-    const [navState, updateNavState] = useState("")
+    const [navState, updateNavState] = useState(Styles.Open)
 
     useEffect(() => {
         if(null != navIcon.current) {
@@ -47,7 +48,7 @@ const NavBar = () => {
     return(
         <div className={ `${ Styles.NavBar } ${ themeStyle }` }>
             <NavBarIcon divRef={ navIcon } navState={ navState } />
-            <NavItemsHandler navState={ navState } />
+            <NavItemsHandler navState={ navState } animate={ navState == Styles.Open } />
         </div>
     )
 }

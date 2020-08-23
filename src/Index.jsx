@@ -4,7 +4,7 @@ import Banner from './Banner/Banner'
 import ThemeContext from './ThemeContext'
 import ThemeToggleButton from './ThemeToggleButton'
 import { ThemeConstants, InitialTheme, BannerAnimationStart, BannerAnimationEnd } from './Constants'
-import NavBar from './Navigation'
+import NavBar from './Navigation/Navigation'
 import Projects from './Projects/Projects'
 import Styles from './styles/styles.scss'
 

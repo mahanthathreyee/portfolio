@@ -2,7 +2,8 @@
     width: 100%;
     
     position: absolute;
-    bottom: 10%;
+    top: 50%;
+    @include transform(translateY(-50%));
 
     svg {
         width: 100%;

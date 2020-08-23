@@ -2,11 +2,11 @@
     &.Dark {
         .NavBarIcon {
             span {
-                background: map-get($dark_theme, "foreground");
+                background: #ffffff;
             }
         }
         .NavItemsHandler {
-            background: map-get($dark_theme, "background");
+            background: #000000;
         }
     }
 }

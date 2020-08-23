@@ -62,6 +62,13 @@ export const ProjectData = [
         image: "/images/International_PewDiePie_Day.png",
         url: false,
         github: "https://github.com/international-pewdiepie-day/IPD-Website"
+    },
+    {
+        className: Styles.Project3,
+        title: "Game Pose",
+        image: "/images/GamePose.png",
+        url: false,
+        github: "https://github.com/mahanthathreyee/GamePose"
     }
 ]
 

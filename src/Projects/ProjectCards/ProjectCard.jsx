@@ -64,6 +64,7 @@ const ProjectCard = () => {
     const [projectIndex, updateProjectIndex] = useState(0)
     const [projectVisibility, updateProjectVisbility] = useState(null)
     const [cardStyleClass, updateCardStyleClass] = useState(Styles.First)
+    const cardIndexClass = [Styles.First, Styles.Second, Styles.Third]
 
     useEffect(() => {
         setTimeout(() => {
@@ -72,7 +73,7 @@ const ProjectCard = () => {
     }, [projectVisibility])
 
     useEffect(() => {
-        updateCardStyleClass(getCardClass())
+        updateCardStyleClass(cardIndexClass[projectIndex])
     }, [projectIndex])
 
     function updateCard(cardSelected) {
@@ -83,13 +84,6 @@ const ProjectCard = () => {
         if(index == projectIndex)
             return true
         return false
-    }
-
-    function getCardClass() {
-        switch(projectIndex) {
-            case 0: return Styles.First
-            case 1: return Styles.Second;
-        }
     }
 
     const themeStyle = useContext(ThemeContext) == ThemeConstants.Light ? Styles.Light : Styles.Dark;

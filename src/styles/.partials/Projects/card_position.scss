@@ -7,6 +7,9 @@
             &:nth-child(2) {
                 left: 115%;
             }
+            &:nth-child(3) {
+                left: 150%;
+            }
         }
     }
     &.Second {
@@ -15,6 +18,22 @@
                 left: -15%;
             }
             &:nth-child(2) {
+                left: 50%;
+            }
+            &:nth-child(3) {
+                left: 115%;
+            }
+        }
+    }
+    &.Third {
+        .Card {
+            &:nth-child(1) {
+                left: -100%;
+            }
+            &:nth-child(2) {
+                left: -15%;
+            }
+            &:nth-child(3) {
                 left: 50%;
             }
         }

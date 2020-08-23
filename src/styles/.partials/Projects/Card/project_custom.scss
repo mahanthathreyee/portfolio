@@ -1,6 +1,6 @@
 .Projects {
     .Card {
-        &.Project1 {
+        &.Project1, &.Project3 {
             background: #000000 !important;
         }
         &.Project2 {

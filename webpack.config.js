@@ -1,12 +1,7 @@
 const webpack = require("webpack");
 
 module.exports = {
-    mode: 'development',
     context: __dirname,
-    entry: [
-        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-        './src/Index.jsx'
-    ],
     module: {
         rules: [
             {
@@ -36,8 +31,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    }
 };

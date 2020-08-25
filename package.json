@@ -4,8 +4,8 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "node build"
+    "start": "node server_dev.js",
+    "build": "node server_prod.js"
   },
   "repository": {
     "type": "git",

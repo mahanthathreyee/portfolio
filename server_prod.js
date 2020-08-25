@@ -2,7 +2,7 @@ const express = require('express');
 const webpack = require('webpack');
 const session = require('express-session');
 const routes  = require('./routes/routes');
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.prod');
 const { port, sessionSecret } = require('./config');
 
 //Initialize Express

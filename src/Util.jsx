@@ -66,4 +66,8 @@ const HeadingTextAnimationOne = (props) => {
     )
 }
 
-export { SocialConnect, HeadingTextAnimationOne }
+const GetRandomInt = (min, max) => {
+    return Math.random() * (max - min) + min
+}
+
+export { SocialConnect, HeadingTextAnimationOne, GetRandomInt }

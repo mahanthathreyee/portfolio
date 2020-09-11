@@ -1,9 +1,9 @@
 .Banner {
     &.Light {
-        color: #000000;
+        color: map-get($light_theme, "foreground");
 
         a {
-            color: #000000;
+            color: map-get($light_theme, "foreground");
         }
     }
 }

@@ -8,11 +8,7 @@
         .BackgroundColor6 { fill: #4070b3; }
         .BackgroundColor7 { fill: #2e5281; }
         .BackgroundColor9 { fill: #000d19; }
-
-        .Sun {
-            @include transform(translateY(100vh));
-        }
-
+        
         .Balloon {
             fill: #faa243;
         }

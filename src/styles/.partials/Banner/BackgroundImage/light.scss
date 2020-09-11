@@ -8,9 +8,5 @@
         .BackgroundColor6 { fill: #b34070; }
         .BackgroundColor7 { fill: #812e52; }
         .BackgroundColor9 { fill: #7C4A74; }
-
-        .Moon {
-            @include transform(translateY(-100vh));
-        }
     }
 }

@@ -11,62 +11,6 @@
             will-change: fill;
         }
     }
-    .Moon, .Sun {
-        @include transform(translateY(0));
-        @include transition(transform 0.5s linear);
-    }
-
-    @for $i from 1 through 2 {
-        .Sun#{ $i }, .Moon#{ $i } {
-            transform-origin: center;
-            transform-box: fill-box;
-            @include animation(SkyObjectsGlow 5s linear infinite alternate)
-        }
-    }
-
-    .HABalloon {
-        @include animation(BalloonFly 5s linear infinite alternate);
-        &:nth-child(2) {
-            animation-delay: 1.5s;
-        }
-    }
-
-    .Cloud {
-        @include animation(CloudMove 25s linear infinite);
-        @for $i from 1 through 8 {
-            &:nth-child(#{ $i }) {
-                animation-delay: -#{ 1.33 * random() }s;
-            }
-        }
-    }
-    .Stars {
-        g {
-            @include animation(StarsGlow 3s linear infinite alternate);
-            @for $i from 1 through 70 {
-                &:nth-child(#{ $i }) {
-                    animation-delay: -#{ 1.33 * random() }s;
-                }
-            }
-        }
-    }
-}
-
-@include keyframes(BalloonFly) {
-    from {
-        @include transform(translate3d(0, 0px, 0));
-    }
-    to {
-        @include transform(translate3d(0, 50px, 0));
-    }
-}
-
-@include keyframes(SkyObjectsGlow) {
-    $radiusScale: 1.1;
-    from {
-        @include transform(scale(1, 1));
-    } to {
-        @include transform(scale($radiusScale, $radiusScale));
-    }
 }
 
 @include keyframes(CloudMove) {
@@ -75,14 +19,5 @@
     }
     100% {
         @include transform(translateX(200vw));
-    }
-}
-
-@include keyframes(StarsGlow) {
-    from {
-        opacity: 0.25;
-    }
-    to {
-        opacity: 1;
     }
 }
